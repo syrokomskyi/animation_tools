@@ -7,11 +7,17 @@ import '../animation_tools.dart';
 class SpineAnimationTools extends AnimationTools {
   SpineAnimationTools(String sourcePath) : super(sourcePath);
 
-  String get fileAtlas => '$currentFolder.atlas';
+  String get fileAtlas => buildFileAtlas(currentFolder);
 
-  String get fileJson => '$currentFolder.json';
+  String get fileJson => buildFileJson(currentFolder);
 
-  String get fileTexture => '$currentFolder.webp';
+  String get fileTexture => buildFileTexture(currentFolder);
+
+  static String buildFileAtlas(String name) => '$name.atlas';
+
+  static String buildFileJson(String name) => '$name.json';
+
+  static String buildFileTexture(String name) => '$name.webp';
 
   @override
   Future<void> copy(String destinationPath) async {
@@ -30,14 +36,14 @@ class SpineAnimationTools extends AnimationTools {
           ' from `${current.path}` to `${destination.path}`.');
     }
 
-    // 2) Rename dependencies into the file `*.atlas`.
+    // 2) Rename dependencies into the file [fileAtlas].
     {
       final p = '${current.path}/$fileAtlas';
       print('2) Renaming dependencies into the file `$p`...');
-      final oldFileName = sourceFolder;
-      final newFileName = currentFolder;
+      final oldFilePattern = buildFileTexture(sourceFolder);
+      final newFilePattern = buildFileTexture(currentFolder);
       final file = File(p);
-      _renameContentFile(file, oldFileName, newFileName);
+      _renameContentFile(file, oldFilePattern, newFilePattern);
       print('\tSuccess rename dependencies into the file `$p`...');
     }
   }
