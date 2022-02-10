@@ -1,4 +1,4 @@
-import 'package:animation_tools/animation_tools.dart';
+import 'package:animation_tools/calculate_randoms.dart';
 import 'package:test/test.dart';
 
 void main() {

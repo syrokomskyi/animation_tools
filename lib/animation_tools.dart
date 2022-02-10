@@ -1,6 +1,13 @@
-import 'dart:math';
+import 'dart:io' show Directory;
 
-List<int> calculateRandoms(int seed, [int maxValue = 1000000, int n = 10]) {
-  final rand = Random(seed);
-  return List.generate(n, (index) => rand.nextInt(maxValue));
+abstract class AnimationTools {
+  Directory current;
+
+  AnimationTools(String currentPath)
+      : assert(currentPath.isNotEmpty),
+        current = Directory(currentPath) {
+    assert(current.existsSync());
+  }
+
+  void copy(String destinationPath);
 }
