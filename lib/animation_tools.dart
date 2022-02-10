@@ -19,4 +19,6 @@ abstract class AnimationTools {
   }
 
   Future<void> copy(String destinationPath);
+
+  Future<void> scale(double scale);
 }

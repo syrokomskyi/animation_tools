@@ -1,5 +1,6 @@
 import 'dart:io' show Directory, File;
 
+import 'package:image/image.dart';
 import 'package:path/path.dart' as path;
 
 import '../animation_tools.dart';
@@ -44,7 +45,34 @@ class SpineAnimationTools extends AnimationTools {
       final newFilePattern = buildFileTexture(currentFolder);
       final file = File(p);
       _renameContentFile(file, oldFilePattern, newFilePattern);
-      print('\tSuccess rename dependencies into the file `$p`...');
+      print('\tSuccess rename dependencies into the file `$p`.');
+    }
+  }
+
+  @override
+  Future<void> scale(double scale) async {
+    assert(scale > 0);
+
+    print('\n');
+
+    // 1) Scale texture.
+    {
+      final p = '${current.path}/$fileTexture';
+      print('1) Scaling texture `$p` to $scale...');
+      final file = File(p);
+      final bytes = file.readAsBytesSync();
+      final image = decodeImage(bytes)!;
+      final width = image.width * scale;
+      final height = image.height * scale;
+      final scaled = copyResize(
+        image,
+        width: width.toInt(),
+        height: height.toInt(),
+        interpolation: Interpolation.nearest,
+      );
+      final encoded = encodePng(scaled);
+      file.writeAsBytesSync(encoded, flush: true);
+      print('\tSuccess scaling texture `$p` to $scale.');
     }
   }
 
