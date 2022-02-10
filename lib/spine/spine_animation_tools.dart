@@ -59,6 +59,7 @@ class SpineAnimationTools extends AnimationTools {
     {
       final p = '${current.path}/$fileTexture';
       print('1) Scaling texture `$p` to $scale...');
+
       final file = File(p);
       final bytes = file.readAsBytesSync();
       final image = decodeImage(bytes)!;
@@ -70,8 +71,23 @@ class SpineAnimationTools extends AnimationTools {
         height: height.toInt(),
         interpolation: Interpolation.nearest,
       );
+
       final encoded = encodePng(scaled);
       file.writeAsBytesSync(encoded, flush: true);
+
+      /* \todo Add a compress to WEBP format.
+      \see https://pub.dev/packages/flutter_image_compress
+      final compressed = await FlutterImageCompress.compressWithList(
+        image.getBytes(),
+        minWidth: width.toInt(),
+        minHeight: height.toInt(),
+        quality: 100,
+        format: CompressFormat.webp,
+        keepExif: true,
+      );
+      file.writeAsBytesSync(compressed, flush: true);
+      */
+
       print('\tSuccess scaling texture `$p` to $scale.');
     }
   }
