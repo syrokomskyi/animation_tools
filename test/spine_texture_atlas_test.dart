@@ -17,4 +17,28 @@ void main() {
     line.scale(0.755);
     expect(line.toString(), 'size: 837, 631');
   });
+
+  test('SpineTextureAtlas Size.scale with spaces', () async {
+    const source = '  size: 1108, 836';
+    final line = Size(source);
+
+    line.scale(0.755);
+    expect(line.toString(), '  size: 837, 631');
+  });
+
+  test('SpineTextureAtlas Orig.scale', () async {
+    const source = '  orig: 122, 143';
+    final line = Orig(source);
+
+    line.scale(0.75);
+    expect(line.toString(), '  orig: 92, 107');
+  });
+
+  test('SpineTextureAtlas Orig.scale', () async {
+    const source = '  offset: 2, 3';
+    final line = Offset(source);
+
+    line.scale(0.75);
+    expect(line.toString(), '  offset: 2, 2');
+  });
 }

@@ -67,5 +67,11 @@ class Size extends SizedElement<int> {
 }
 
 // orig: 122, 143
+class Orig extends SizedElement<int> {
+  Orig(String raw) : super(raw);
+}
 
-// offset: 0, 0
+// offset: 2, 3
+class Offset extends SizedElement<int> {
+  Offset(String raw) : super(raw);
+}
