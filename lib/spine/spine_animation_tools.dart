@@ -1,5 +1,6 @@
 import 'dart:io' show Directory, File;
 
+import 'package:animation_tools/spine/spine_texture_atlas.dart';
 import 'package:image/image.dart';
 import 'package:path/path.dart' as path;
 
@@ -10,9 +11,15 @@ class SpineAnimationTools extends AnimationTools {
 
   String get fileAtlas => buildFileAtlas(currentFolder);
 
+  String get pathToFileAtlas => '$currentPath/$fileAtlas';
+
   String get fileJson => buildFileJson(currentFolder);
 
+  String get pathToFileJson => '$currentPath/$fileJson';
+
   String get fileTexture => buildFileTexture(currentFolder);
+
+  String get pathToFileTexture => '$currentPath/$fileTexture';
 
   static String buildFileAtlas(String name) => '$name.atlas';
 
@@ -57,7 +64,7 @@ class SpineAnimationTools extends AnimationTools {
 
     // 1) Scale texture.
     {
-      final p = '${current.path}/$fileTexture';
+      final p = pathToFileTexture;
       print('1) Scaling texture `$p` to $scale...');
 
       final file = File(p);
@@ -89,6 +96,18 @@ class SpineAnimationTools extends AnimationTools {
       */
 
       print('\tSuccess scaling texture `$p` to $scale.');
+    }
+
+    // 2) Scale atlas.
+    {
+      final p = pathToFileAtlas;
+      print('2) Scaling atlas `$p` to $scale...');
+
+      final file = File(p);
+      final textureAtlas = SpineTextureAtlas(file);
+      textureAtlas.scaleAndSave(scale);
+
+      print('\tSuccess scaling atlas `$p` to $scale.');
     }
   }
 

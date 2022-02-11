@@ -7,19 +7,52 @@ class SpineTextureAtlas {
 
   SpineTextureAtlas(this.file) : assert(file.existsSync());
 
-  void scale(double s) {
+  void scaleAndSave(double s) {
+    final r = <String>[];
+
     final raw = file.readAsStringSync();
     final lines = raw.split('\n');
     for (final line in lines) {
+      r.add(line);
+
       if (line.isEmpty) {
         continue;
       }
 
-      // \TODO
+      final sized = SizedElementFactory.createFromString(line);
+      if (sized == null) {
+        continue;
+      }
 
+      sized.scale(s);
+      r.last = sized.toString();
     }
 
-    file.writeAsStringSync(raw, flush: true);
+    final newRaw = r.join('\n');
+    file.writeAsStringSync(newRaw, flush: true);
+  }
+}
+
+// ignore: avoid_classes_with_only_static_members
+class SizedElementFactory {
+  static SizedElement? createFromString(String s) {
+    if (s.contains('xy:')) {
+      return XY(s);
+    }
+
+    if (s.contains('size:')) {
+      return Size(s);
+    }
+
+    if (s.contains('orig:')) {
+      return Orig(s);
+    }
+
+    if (s.contains('offset:')) {
+      return Offset(s);
+    }
+
+    return null;
   }
 }
 

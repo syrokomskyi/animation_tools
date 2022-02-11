@@ -9,7 +9,11 @@ abstract class AnimationTools {
 
   String get sourceFolder => path.basename(source.path);
 
+  String get sourcePath => source.path;
+
   String get currentFolder => path.basename(current.path);
+
+  String get currentPath => current.path;
 
   AnimationTools(String currentPath)
       : assert(currentPath.isNotEmpty),

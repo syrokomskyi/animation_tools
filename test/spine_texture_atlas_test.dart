@@ -1,6 +1,7 @@
 import 'package:animation_tools/spine/spine_texture_atlas.dart';
 import 'package:test/test.dart';
 
+/// See complex tests into the `spine_scale_test.dart`.
 void main() {
   test('SpineTextureAtlas XY.scale', () async {
     const source = '  xy: 2, 690';
@@ -34,7 +35,7 @@ void main() {
     expect(line.toString(), '  orig: 92, 107');
   });
 
-  test('SpineTextureAtlas Orig.scale', () async {
+  test('SpineTextureAtlas Offset.scale', () async {
     const source = '  offset: 2, 3';
     final line = Offset(source);
 
