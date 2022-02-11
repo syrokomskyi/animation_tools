@@ -52,7 +52,12 @@ abstract class SizedElement<T extends num> {
 
   SizedElement(this.raw) : assert(raw.isNotEmpty);
 
-  void scale(double s);
+  void scale(double s) {
+    final a = x * s;
+    x = T is double ? a.n2 : a.toInt();
+    final b = y * s;
+    y = T is double ? b.n2 : b.toInt();
+  }
 
   @override
   String toString() => raw;
@@ -61,12 +66,6 @@ abstract class SizedElement<T extends num> {
 // xy: 2, 690
 class XY extends SizedElement<int> {
   XY(String raw) : super(raw);
-
-  @override
-  void scale(double s) {
-    x = (x * s).toInt();
-    y = (y * s).toInt();
-  }
 }
 
 // size: 122, 143
