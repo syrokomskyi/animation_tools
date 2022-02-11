@@ -7,7 +7,21 @@ class SpineTextureAtlas {
 
   SpineTextureAtlas(this.file) : assert(file.existsSync());
 
-  void scaleAndSave(double s) {
+  bool hasReferenceToTexture(String name) {
+    assert(name.isNotEmpty);
+
+    final raw = file.readAsStringSync();
+    final lines = raw.split('\n');
+    for (final line in lines) {
+      if (line.contains(name)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  void scaleAndSave(num s) {
     final r = <String>[];
 
     final raw = file.readAsStringSync();
@@ -80,10 +94,10 @@ abstract class SizedElement<T extends num> {
 
   SizedElement(this.raw) : assert(raw.isNotEmpty);
 
-  void scale(double s) {
-    final a = x * s;
+  void scale(num s) {
+    final a = x * s.toDouble();
     x = T is double ? a.n4 : a.round();
-    final b = y * s;
+    final b = y * s.toDouble();
     y = T is double ? b.n4 : b.round();
   }
 

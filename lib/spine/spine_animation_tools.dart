@@ -29,6 +29,46 @@ class SpineAnimationTools extends AnimationTools {
   static String buildFileNameTexture(String name) => '$name.webp';
 
   @override
+  Future<void> check() async {
+    print('\n');
+
+    // 1) Checking availability files.
+    {
+      print('1) Checking availability files'
+          ' for animation `${current.path}`...');
+      if (!File(pathToFileAtlas).existsSync()) {
+        throw Exception('Atlas not found by path `$pathToFileAtlas`.');
+      }
+
+      if (!File(pathToFileSkeleton).existsSync()) {
+        throw Exception('Skeleton not found by path `$pathToFileSkeleton`.');
+      }
+
+      if (!File(pathToFileTexture).existsSync()) {
+        throw Exception('Texture not found by path `$pathToFileTexture`.');
+      }
+
+      print('\tSuccess check availability'
+          ' for animation `${current.path}`.');
+    }
+
+    // 2) Checking reference.
+    {
+      print('2) Checking reference to texture'
+          ' for animation `${current.path}`...');
+
+      final textureAtlas = SpineTextureAtlas(File(pathToFileAtlas));
+      if (!textureAtlas.hasReferenceToTexture(fileTexture)) {
+        throw Exception('Reference to texture `$fileTexture`'
+            ' not found into the file `$pathToFileAtlas`.');
+      }
+
+      print('\tSuccess check reference to texture'
+          ' for animation `${current.path}`.');
+    }
+  }
+
+  @override
   Future<void> copy(String destinationPath) async {
     assert(destinationPath.isNotEmpty);
 
@@ -58,7 +98,7 @@ class SpineAnimationTools extends AnimationTools {
   }
 
   @override
-  Future<void> scale(double scale) async {
+  Future<void> scale(num scale) async {
     assert(scale > 0);
 
     print('\n');

@@ -16,14 +16,14 @@ class SpineSkeletonJson {
 
   SpineSkeletonJson(this.file) : assert(file.existsSync());
 
-  void scaleAndSave(double s) {
+  void scaleAndSave(num s) {
     final raw = file.readAsStringSync();
     final json = raw.jsonMap;
     final newJson = _scale(json, s);
     file.writeAsStringSync(newJson.sjson, flush: true);
   }
 
-  Map<String, dynamic> _scale(Map<String, dynamic> json, double s) {
+  Map<String, dynamic> _scale(Map<String, dynamic> json, num s) {
     return json.map<String, dynamic>((String name, dynamic value) {
       if (value is Map) {
         final v = _scale(value as Map<String, dynamic>, s);
@@ -41,7 +41,10 @@ class SpineSkeletonJson {
       if (value is num && needToScaleFields.contains(name)) {
         final v = value * s;
         //print('`$name` scaled from $value to $v');
-        return MapEntry<String, dynamic>(name, value is int ? v.round() : v.n4);
+        return MapEntry<String, dynamic>(
+          name,
+          value is int ? v.round() : (v as double).n4,
+        );
       }
 
       // don't scale other values

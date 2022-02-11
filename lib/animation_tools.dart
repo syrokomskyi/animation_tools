@@ -22,7 +22,9 @@ abstract class AnimationTools {
     current = source;
   }
 
+  Future<void> check();
+
   Future<void> copy(String destinationPath);
 
-  Future<void> scale(double scale);
+  Future<void> scale(num scale);
 }
