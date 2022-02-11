@@ -8,17 +8,17 @@ void main() {
     const sourcePath = 'test/data/owl_100';
     final tools = SpineAnimationTools(sourcePath);
 
-    const copyPath = 'test/data/owl_50';
+    const copyPath = 'test/data/owl_75';
     await tools.copy(copyPath);
 
     expect(Directory(copyPath).existsSync(), true);
-    expect(File('$copyPath/owl_50.atlas').existsSync(), true);
-    expect(File('$copyPath/owl_50.json').existsSync(), true);
-    expect(File('$copyPath/owl_50.webp').existsSync(), true);
+    expect(File('$copyPath/owl_75.atlas').existsSync(), true);
+    expect(File('$copyPath/owl_75.json').existsSync(), true);
+    expect(File('$copyPath/owl_75.webp').existsSync(), true);
 
-    final s = File('$copyPath/owl_50.atlas').readAsStringSync();
+    final s = File('$copyPath/owl_75.atlas').readAsStringSync();
     expect(s.isNotEmpty, true);
-    expect(s.contains('owl_50.webp'), true);
+    expect(s.contains('owl_75.webp'), true);
     expect(s.contains('owl_100.webp'), false);
   });
 }

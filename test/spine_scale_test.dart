@@ -9,14 +9,14 @@ import 'package:test/test.dart';
 void main() {
   test('SpineAnimationTools scale', () async {
     const sourcePath = 'test/data/owl_100';
-    const expectedPath = 'test/data/owl_50_expected';
+    const expectedPath = 'test/data/owl_75_expected';
     const scale = 0.75;
     final tools = SpineAnimationTools(sourcePath);
 
     final sourceBytes = File('$sourcePath/owl_100.webp').readAsBytesSync();
     final sourceImage = decodeImage(sourceBytes)!;
 
-    const copyPath = 'test/data/owl_50';
+    const copyPath = 'test/data/owl_75';
     await tools.copy(copyPath);
     await tools.scale(scale);
 
