@@ -26,10 +26,10 @@ class SpineTextureAtlas {
 abstract class SizedElement<T extends num> {
   String raw;
 
-  List<num> get numbers => RegExp(r'\d+').allMatches(raw).map((match) {
-        final v = num.parse(match[0] ?? '-1');
-        return v is double ? v.n2 : v;
-      }).toList();
+  List<num> get numbers => RegExp(r'\d+')
+      .allMatches(raw)
+      .map((match) => num.parse(match[0] ?? '-1'))
+      .toList();
 
   num get x => v(0);
 
@@ -41,22 +41,15 @@ abstract class SizedElement<T extends num> {
   set y(num value) =>
       raw = raw.replaceFirstMapped(RegExp(r', \d+'), (match) => ', $value');
 
-  num v(int i) {
-    final number = numbers[i];
-    if (number is double) {
-      return number.n2;
-    }
-
-    return number;
-  }
+  num v(int i) => numbers[i];
 
   SizedElement(this.raw) : assert(raw.isNotEmpty);
 
   void scale(double s) {
     final a = x * s;
-    x = T is double ? a.n2 : a.toInt();
+    x = T is double ? a.n2 : a.n0.toInt();
     final b = y * s;
-    y = T is double ? b.n2 : b.toInt();
+    y = T is double ? b.n2 : b.n0.toInt();
   }
 
   @override
@@ -69,6 +62,9 @@ class XY extends SizedElement<int> {
 }
 
 // size: 122, 143
+class Size extends SizedElement<int> {
+  Size(String raw) : super(raw);
+}
 
 // orig: 122, 143
 

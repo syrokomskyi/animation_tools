@@ -7,10 +7,9 @@ void main() {
     final line = XY(source);
 
     line.scale(0.75);
-    expect(line.toString(), '  xy: 1, 517');
+    expect(line.toString(), '  xy: 2, 518');
   });
 
-  /*
   test('SpineTextureAtlas Size.scale without spaces', () async {
     const source = 'size: 1108, 836';
     final line = Size(source);
@@ -18,5 +17,4 @@ void main() {
     line.scale(0.755);
     expect(line.toString(), 'size: 837, 631');
   });
-  */
 }
