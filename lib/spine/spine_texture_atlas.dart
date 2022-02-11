@@ -56,6 +56,8 @@ class SizedElementFactory {
   }
 }
 
+/// \warning Today recognize only with integer numbers.
+/// \todo Recognize double numbers.
 abstract class SizedElement<T extends num> {
   String raw;
 
@@ -80,9 +82,9 @@ abstract class SizedElement<T extends num> {
 
   void scale(double s) {
     final a = x * s;
-    x = T is double ? a.n2 : a.n0.toInt();
+    x = T is double ? a.n4 : a.round();
     final b = y * s;
-    y = T is double ? b.n2 : b.n0.toInt();
+    y = T is double ? b.n4 : b.round();
   }
 
   @override

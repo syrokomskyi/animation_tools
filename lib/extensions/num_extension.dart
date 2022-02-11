@@ -17,6 +17,8 @@ extension DoubleExtension on double {
 
   double get n3 => np(3);
 
+  double get n4 => np(4);
+
   double np(int digits) {
     final p = pow(10, digits);
     return (this * p).roundToDouble() / p;
@@ -29,4 +31,6 @@ extension DoubleExtension on double {
   String get s2 => toStringAsFixed(2);
 
   String get s3 => toStringAsFixed(3);
+
+  String get s4 => toStringAsFixed(4);
 }

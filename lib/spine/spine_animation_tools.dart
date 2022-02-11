@@ -1,31 +1,32 @@
 import 'dart:io' show Directory, File;
 
-import 'package:animation_tools/spine/spine_texture_atlas.dart';
 import 'package:image/image.dart';
 import 'package:path/path.dart' as path;
 
 import '../animation_tools.dart';
+import 'spine_skeleton_json.dart';
+import 'spine_texture_atlas.dart';
 
 class SpineAnimationTools extends AnimationTools {
   SpineAnimationTools(String sourcePath) : super(sourcePath);
 
-  String get fileAtlas => buildFileAtlas(currentFolder);
+  String get fileAtlas => buildFileNameAtlas(currentFolder);
 
   String get pathToFileAtlas => '$currentPath/$fileAtlas';
 
-  String get fileJson => buildFileJson(currentFolder);
+  String get fileSkeleton => buildFileNameSkeleton(currentFolder);
 
-  String get pathToFileJson => '$currentPath/$fileJson';
+  String get pathToFileSkeleton => '$currentPath/$fileSkeleton';
 
-  String get fileTexture => buildFileTexture(currentFolder);
+  String get fileTexture => buildFileNameTexture(currentFolder);
 
   String get pathToFileTexture => '$currentPath/$fileTexture';
 
-  static String buildFileAtlas(String name) => '$name.atlas';
+  static String buildFileNameAtlas(String name) => '$name.atlas';
 
-  static String buildFileJson(String name) => '$name.json';
+  static String buildFileNameSkeleton(String name) => '$name.json';
 
-  static String buildFileTexture(String name) => '$name.webp';
+  static String buildFileNameTexture(String name) => '$name.webp';
 
   @override
   Future<void> copy(String destinationPath) async {
@@ -48,8 +49,8 @@ class SpineAnimationTools extends AnimationTools {
     {
       final p = '${current.path}/$fileAtlas';
       print('2) Renaming dependencies into the file `$p`...');
-      final oldFilePattern = buildFileTexture(sourceFolder);
-      final newFilePattern = buildFileTexture(currentFolder);
+      final oldFilePattern = buildFileNameTexture(sourceFolder);
+      final newFilePattern = buildFileNameTexture(currentFolder);
       final file = File(p);
       _renameContentFile(file, oldFilePattern, newFilePattern);
       print('\tSuccess rename dependencies into the file `$p`.');
@@ -108,6 +109,18 @@ class SpineAnimationTools extends AnimationTools {
       textureAtlas.scaleAndSave(scale);
 
       print('\tSuccess scaling atlas `$p` to $scale.');
+    }
+
+    // 3) Scale skeleton.
+    {
+      final p = pathToFileSkeleton;
+      print('3) Scaling skeleton `$p` to $scale...');
+
+      final file = File(p);
+      final skeleton = SpineSkeletonJson(file);
+      skeleton.scaleAndSave(scale);
+
+      print('\tSuccess scaling skeleton `$p` to $scale.');
     }
   }
 
