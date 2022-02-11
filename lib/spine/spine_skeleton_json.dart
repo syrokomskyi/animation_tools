@@ -4,12 +4,14 @@ import '../extensions/json_extension.dart';
 import '../extensions/num_extension.dart';
 
 class SpineSkeletonJson {
-  static const needToScaleFields = <String>[
+  static const needToScaleRootFields = <String>[
+    'skeleton',
+  ];
+  static const needToScaleInnerFields = <String>[
     'x',
     'y',
     'width',
     'height',
-    'length',
   ];
 
   final File file;
@@ -19,7 +21,12 @@ class SpineSkeletonJson {
   void scaleAndSave(num s) {
     final raw = file.readAsStringSync();
     final json = raw.jsonMap;
-    final newJson = _scale(json, s);
+    final newJson = json.map<String, dynamic>(
+      (String name, dynamic value) => MapEntry<String, dynamic>(
+        name,
+        needToScaleRootFields.contains(name) ? _scale(json, s) : value,
+      ),
+    );
     file.writeAsStringSync(newJson.sjson, flush: true);
   }
 
@@ -38,7 +45,7 @@ class SpineSkeletonJson {
         return MapEntry<String, dynamic>(name, v);
       }
 
-      if (value is num && needToScaleFields.contains(name)) {
+      if (value is num && needToScaleInnerFields.contains(name)) {
         final v = value * s;
         //print('`$name` scaled from $value to $v');
         return MapEntry<String, dynamic>(
