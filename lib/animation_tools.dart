@@ -26,7 +26,7 @@ abstract class AnimationTools {
 
   Future<void> copy(String destinationPath);
 
-  Future<void> leaveOnlyAnimations(List<String> names);
+  Future<void> leaveAnimations(List<String> names);
 
   Future<void> moveAnimation(String nameFrom, String nameTo);
 

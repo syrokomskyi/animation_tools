@@ -24,7 +24,7 @@ class SpineSkeletonJson {
 
   factory SpineSkeletonJson.path(String path) => SpineSkeletonJson(File(path));
 
-  Map<String, dynamic> leaveOnlyAnimations(List<String> names) {
+  Map<String, dynamic> leaveAnimations(List<String> names) {
     final newJson = json;
     final animations = newJson['animations'] as Map<String, dynamic>;
     final keptAnimations = <String, dynamic>{};

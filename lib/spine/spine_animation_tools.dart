@@ -4,7 +4,6 @@ import 'package:image/image.dart';
 import 'package:path/path.dart' as path;
 
 import '../animation_tools.dart';
-import '../extensions/json_extension.dart';
 import 'spine_skeleton_json.dart';
 import 'spine_texture_atlas.dart';
 
@@ -128,10 +127,10 @@ class SpineAnimationTools extends AnimationTools {
   }
 
   @override
-  Future<void> leaveOnlyAnimations(List<String> names) async {
+  Future<void> leaveAnimations(List<String> names) async {
     assert(names.isNotEmpty);
 
-    print('\n--leave_only_animations'
+    print('\n--leave_animations'
         '\n\tsource: `$sourcePath`'
         '\n\tnames: $names'
         '\n');
@@ -178,7 +177,7 @@ class SpineAnimationTools extends AnimationTools {
 
       final file = File(p);
       final skeleton = SpineSkeletonJson(file);
-      final kept = skeleton.leaveOnlyAnimations(names);
+      final kept = skeleton.leaveAnimations(names);
       skeleton.save(kept);
 
       print('$currentIndent\tOnly animations $names'
