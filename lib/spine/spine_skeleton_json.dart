@@ -16,21 +16,33 @@ class SpineSkeletonJson {
 
   final File file;
 
-  SpineSkeletonJson(this.file) : assert(file.existsSync());
+  String get raw => file.readAsStringSync();
 
-  void scaleAndSave(num s) {
-    final raw = file.readAsStringSync();
-    final json = raw.jsonMap;
-    final newJson = json.map<String, dynamic>(
-      (String name, dynamic value) => MapEntry<String, dynamic>(
-        name,
-        needToScaleRootFields.contains(name)
-            ? _scale(value as Map<String, dynamic>, s)
-            : value,
-      ),
-    );
-    file.writeAsStringSync(newJson.sjson, flush: true);
+  Map<String, dynamic> get json => raw.jsonMap;
+
+  SpineSkeletonJson(this.file) : assert(file.existsSync(), file.toString());
+
+  factory SpineSkeletonJson.path(String path) => SpineSkeletonJson(File(path));
+
+  Map<String, dynamic> removeAnimation(String name) {
+    final newJson = json;
+    final animations = newJson['animations'] as Map<String, dynamic>;
+    animations.remove(name);
+
+    return newJson;
   }
+
+  Map<String, dynamic> scale(num s) => json.map<String, dynamic>(
+        (String name, dynamic value) => MapEntry<String, dynamic>(
+          name,
+          needToScaleRootFields.contains(name)
+              ? _scale(value as Map<String, dynamic>, s)
+              : value,
+        ),
+      );
+
+  void save(Map<String, dynamic> newJson) =>
+      file.writeAsStringSync(newJson.sjson, flush: true);
 
   Map<String, dynamic> _scale(Map<String, dynamic> json, num s) {
     return json.map<String, dynamic>((String name, dynamic value) {

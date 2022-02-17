@@ -37,6 +37,7 @@ class SpineAnimationTools extends AnimationTools {
   void resetCurrentIndent() => currentIndentValue = 1;
 
   void increaseCurrentIndent() => ++currentIndentValue;
+
   void decreaseCurrentIndent() => --currentIndentValue;
 
   @override
@@ -195,9 +196,56 @@ class SpineAnimationTools extends AnimationTools {
 
       final file = File(p);
       final skeleton = SpineSkeletonJson(file);
-      skeleton.scaleAndSave(scale);
+      final scaled = skeleton.scale(scale);
+      skeleton.save(scaled);
 
       print('$currentIndent\tSuccess scaling skeleton `$p` to $scale.');
+    }
+  }
+
+  @override
+  Future<void> removeAnimation(String name) async {
+    assert(name.isNotEmpty);
+
+    print('\n--remove_animation'
+        '\n\tsource: `$sourcePath`'
+        '\n\tname: $name'
+        '\n');
+
+    // 1) Search animation.
+    var step = 1;
+    resetCurrentIndent();
+    late final Map<String, dynamic> animations;
+    {
+      final p = pathToFileSkeleton;
+      print('$currentIndent$step) Searching animation`$name` into the `$p`...');
+
+      final file = File(p);
+      final skeleton = SpineSkeletonJson(file);
+      animations = (skeleton.json['animations'] ?? <String, dynamic>{})
+          as Map<String, dynamic>;
+
+      if (animations.isEmpty) {
+        print('$currentIndent\tAnimation `$name` not found into the `$p`.');
+        return;
+      }
+
+      print('$currentIndent\tAnimation `$name` found into the `$p`.');
+    }
+
+    // 2) Remove animation.
+    ++step;
+    resetCurrentIndent();
+    {
+      final p = pathToFileSkeleton;
+      print('$currentIndent$step) Removing animation `$name` from the `$p`...');
+
+      final file = File(p);
+      final skeleton = SpineSkeletonJson(file);
+      final removed = skeleton.removeAnimation(name);
+      skeleton.save(removed);
+
+      print('$currentIndent\tAnimation `$name` removed from the `$p`.');
     }
   }
 

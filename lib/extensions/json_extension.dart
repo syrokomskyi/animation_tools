@@ -2,8 +2,10 @@ import 'dart:convert' as convert;
 
 const _encoder = convert.JsonEncoder.withIndent('  ');
 
+String jsonEncoder(dynamic o) => _encoder.convert(o);
+
 extension ObjectJsonExtension on Object {
-  String get sjson => _encoder.convert(this);
+  String get sjson => jsonEncoder(this);
 }
 
 extension StringJsonExtension on String {
