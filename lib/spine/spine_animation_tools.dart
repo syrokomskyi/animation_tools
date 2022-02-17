@@ -4,6 +4,7 @@ import 'package:image/image.dart';
 import 'package:path/path.dart' as path;
 
 import '../animation_tools.dart';
+import '../extensions/json_extension.dart';
 import 'spine_skeleton_json.dart';
 import 'spine_texture_atlas.dart';
 
@@ -123,6 +124,65 @@ class SpineAnimationTools extends AnimationTools {
       _renameContentFile(file, oldFilePattern, newFilePattern);
       decreaseCurrentIndent();
       print('$currentIndent\tSuccess rename dependencies into the file `$p`.');
+    }
+  }
+
+  @override
+  Future<void> leaveOnlyAnimations(List<String> names) async {
+    assert(names.isNotEmpty);
+
+    print('\n--leave_only_animations'
+        '\n\tsource: `$sourcePath`'
+        '\n\tnames: $names'
+        '\n');
+
+    // 1) Search animations.
+    var step = 1;
+    resetCurrentIndent();
+    late final Map<String, dynamic> animations;
+    {
+      final p = pathToFileSkeleton;
+      print('$currentIndent$step) Searching animations $names'
+          ' into the `$p`...');
+
+      final file = File(p);
+      final skeleton = SpineSkeletonJson(file);
+      animations = (skeleton.json['animations'] ?? <String, dynamic>{})
+          as Map<String, dynamic>;
+      String? notFoundName;
+      for (final name in names) {
+        assert(name.trim() == name);
+        if (animations[name] == null) {
+          notFoundName = name;
+          break;
+        }
+      }
+
+      if (notFoundName != null) {
+        print('$currentIndent\tAnimation `$notFoundName` not found'
+            ' into the `$p`.');
+        return;
+      }
+
+      print('$currentIndent\tAll animations - $names -'
+          ' found into the `$p`.');
+    }
+
+    // 2) Leave only animations.
+    ++step;
+    resetCurrentIndent();
+    {
+      final p = pathToFileSkeleton;
+      print('$currentIndent$step) Leave only animations $names'
+          ' into the `$p`...');
+
+      final file = File(p);
+      final skeleton = SpineSkeletonJson(file);
+      final kept = skeleton.leaveOnlyAnimations(names);
+      skeleton.save(kept);
+
+      print('$currentIndent\tOnly animations $names'
+          ' are kept into the `$p`.');
     }
   }
 

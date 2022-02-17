@@ -24,6 +24,20 @@ class SpineSkeletonJson {
 
   factory SpineSkeletonJson.path(String path) => SpineSkeletonJson(File(path));
 
+  Map<String, dynamic> leaveOnlyAnimations(List<String> names) {
+    final newJson = json;
+    final animations = newJson['animations'] as Map<String, dynamic>;
+    final keptAnimations = <String, dynamic>{};
+    for (final kv in animations.entries) {
+      if (names.contains(kv.key)) {
+        keptAnimations[kv.key] = kv.value;
+      }
+    }
+    newJson['animations'] = keptAnimations;
+
+    return newJson;
+  }
+
   Map<String, dynamic> moveAnimation(String nameFrom, String nameTo) {
     final newJson = json;
     final animations = newJson['animations'] as Map<String, dynamic>;
