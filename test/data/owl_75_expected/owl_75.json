@@ -16,249 +16,249 @@
     {
       "name": "bone",
       "parent": "root",
-      "length": 519.6675,
+      "length": 692.89,
       "rotation": 115.85,
-      "x": -1373.61,
-      "y": 2859.42,
+      "x": -1831.48,
+      "y": 3812.56,
       "color": "ffc300ff"
     },
     {
       "name": "bone2",
       "parent": "bone",
-      "x": 246.9225,
-      "y": -42.2625,
+      "x": 329.23,
+      "y": -56.35,
       "color": "ffc300ff"
     },
     {
       "name": "bone3",
       "parent": "bone2",
-      "x": -92.205,
-      "y": -267.885,
+      "x": -122.94,
+      "y": -357.18,
       "color": "ffc300ff"
     },
     {
       "name": "bone4",
       "parent": "bone",
-      "length": 39.585,
+      "length": 52.78,
       "rotation": -0.78,
-      "x": 48.585,
-      "y": -161.49,
+      "x": 64.78,
+      "y": -215.32,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone5",
       "parent": "bone4",
-      "length": 33.0525,
+      "length": 44.07,
       "rotation": -48.99,
-      "x": 39.585,
+      "x": 52.78,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone6",
       "parent": "bone5",
-      "length": 37.2675,
+      "length": 49.69,
       "rotation": -81.63,
-      "x": 33.0525,
+      "x": 44.07,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone7",
       "parent": "bone6",
-      "length": 37.1925,
+      "length": 49.59,
       "rotation": -97.54,
-      "x": 37.2675,
+      "x": 49.69,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone8",
       "parent": "bone",
-      "length": 17.8425,
+      "length": 23.79,
       "rotation": -20.1,
-      "x": 28.1175,
-      "y": -123.0675,
+      "x": 37.49,
+      "y": -164.09,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone9",
       "parent": "bone8",
-      "length": 31.2225,
+      "length": 41.63,
       "rotation": -46.06,
-      "x": 17.8425,
+      "x": 23.79,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone10",
       "parent": "bone9",
-      "length": 33.4275,
+      "length": 44.57,
       "rotation": -78,
-      "x": 31.2225,
+      "x": 41.63,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone11",
       "parent": "bone10",
-      "length": 42.3225,
+      "length": 56.43,
       "rotation": -100.43,
-      "x": 44.775,
-      "y": -1.5525,
+      "x": 59.7,
+      "y": -2.07,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone12",
       "parent": "bone",
-      "length": 30.51,
+      "length": 40.68,
       "rotation": -86.78,
-      "x": 73.7025,
-      "y": 97.785,
+      "x": 98.27,
+      "y": 130.38,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone13",
       "parent": "bone12",
-      "length": 33.135,
+      "length": 44.18,
       "rotation": -85.54,
-      "x": 30.51,
+      "x": 40.68,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone14",
       "parent": "bone13",
-      "length": 39.1575,
+      "length": 52.21,
       "rotation": -85.6,
-      "x": 33.135,
+      "x": 44.18,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone15",
       "parent": "bone14",
-      "length": 37.7925,
+      "length": 50.39,
       "rotation": -87.4,
-      "x": 39.1575,
+      "x": 52.21,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone16",
       "parent": "bone",
-      "length": 25.83,
+      "length": 34.44,
       "rotation": -101.5,
-      "x": 105.0225,
-      "y": 139.8075,
+      "x": 140.03,
+      "y": 186.41,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone17",
       "parent": "bone16",
-      "length": 38.2275,
+      "length": 50.97,
       "rotation": -99.04,
-      "x": 25.83,
+      "x": 34.44,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone18",
       "parent": "bone17",
-      "length": 28.635,
+      "length": 38.18,
       "rotation": -81.38,
-      "x": 38.2275,
+      "x": 50.97,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "bone19",
       "parent": "bone18",
-      "length": 43.7025,
+      "length": 58.27,
       "rotation": -76.37,
-      "x": 28.635,
+      "x": 38.18,
       "transform": "noRotationOrReflection",
       "color": "ffc300ff"
     },
     {
       "name": "owl_eye_right_1",
       "parent": "bone2",
-      "length": 174.9375,
+      "length": 233.25,
       "rotation": 8.25,
-      "x": -71.745,
-      "y": 107.52,
+      "x": -95.66,
+      "y": 143.36,
       "color": "ffc300ff"
     },
     {
       "name": "bone21",
       "parent": "bone2",
-      "length": 181.5225,
+      "length": 242.03,
       "rotation": -29.26,
-      "x": -90.945,
-      "y": -74.6025,
+      "x": -121.26,
+      "y": -99.47,
       "scaleX": 1.1228,
       "color": "ffc300ff"
     },
     {
       "name": "bone22",
       "parent": "owl_eye_right_1",
-      "x": 40.71,
-      "y": -17.4975,
+      "x": 54.28,
+      "y": -23.33,
       "color": "ffc300ff"
     },
     {
       "name": "bone23",
       "parent": "bone21",
-      "x": 40.3125,
-      "y": -10.8225,
+      "x": 53.75,
+      "y": -14.43,
       "color": "ffc300ff"
     },
     {
       "name": "bone24",
       "parent": "bone2",
-      "length": 61.0275,
+      "length": 81.37,
       "rotation": -158.78,
-      "x": -63.3675,
-      "y": 10.665,
+      "x": -84.49,
+      "y": 14.22,
       "color": "ffc300ff"
     },
     {
       "name": "bone25",
       "parent": "bone2",
       "rotation": -158.78,
-      "x": -162.105,
-      "y": -13.1625,
+      "x": -216.14,
+      "y": -17.55,
       "color": "ff3f00ff"
     },
     {
       "name": "bone26",
       "parent": "bone2",
-      "length": 32.28,
+      "length": 43.04,
       "rotation": -174.77,
-      "x": -77.085,
-      "y": 31.0425,
+      "x": -102.78,
+      "y": 41.39,
       "color": "ffc300ff"
     },
     {
       "name": "bone27",
       "parent": "bone2",
       "rotation": -174.77,
-      "x": -150.8325,
-      "y": 22.155,
+      "x": -201.11,
+      "y": 29.54,
       "color": "ff3f00ff"
     },
     {
       "name": "owl_crest",
       "parent": "bone",
-      "length": 117.3525,
+      "length": 156.47,
       "rotation": -40.36,
-      "x": 489.5625,
-      "y": -2.3475,
+      "x": 652.75,
+      "y": -3.13,
       "color": "ffc300ff"
     }
   ],
@@ -356,8 +356,8 @@
       "target": "bone2",
       "rotation": -40.36,
       "local": true,
-      "x": 242.6475,
-      "y": 39.915,
+      "x": 323.53,
+      "y": 53.22,
       "shearY": 360,
       "translateMix": -1,
       "scaleMix": 0,
@@ -388,7 +388,7 @@
             },
             {
               "time": 1.3333,
-              "x": 11.865
+              "x": 15.82
             },
             {
               "time": 2.6667
@@ -416,8 +416,8 @@
             },
             {
               "time": 1.3333,
-              "x": -7.665,
-              "y": 0.3675
+              "x": -10.22,
+              "y": 0.49
             },
             {
               "time": 2.6667
@@ -426,18 +426,18 @@
           "scale": [
             {
               "time": 0.0,
-              "x": 0.75,
-              "y": 0.75
+              "x": 1.0,
+              "y": 1.0
             },
             {
               "time": 1.3333,
-              "x": 0.7613,
-              "y": 0.7613
+              "x": 1.015,
+              "y": 1.015
             },
             {
               "time": 2.6667,
-              "x": 0.75,
-              "y": 0.75
+              "x": 1.0,
+              "y": 1.0
             }
           ]
         },
@@ -704,8 +704,8 @@
             },
             {
               "time": 1.3333,
-              "x": -5.01,
-              "y": 2.6025
+              "x": -6.68,
+              "y": 3.47
             },
             {
               "time": 2.6667
@@ -719,8 +719,8 @@
             },
             {
               "time": 1.3333,
-              "x": -4.1175,
-              "y": -2.3625
+              "x": -5.49,
+              "y": -3.15
             },
             {
               "time": 2.6667
@@ -750,8 +750,8 @@
             },
             {
               "time": 1.3333,
-              "x": 1.035,
-              "y": 2.355
+              "x": 1.38,
+              "y": 3.14
             },
             {
               "time": 2.6667
@@ -787,7 +787,7 @@
             },
             {
               "time": 1.3333,
-              "x": 11.865
+              "x": 15.82
             },
             {
               "time": 2.6667
@@ -815,8 +815,8 @@
           ],
           "translate": [
             {
-              "x": -3.8325,
-              "y": 0.18,
+              "x": -5.11,
+              "y": 0.24,
               "time": 0.0
             },
             {
@@ -824,35 +824,35 @@
             },
             {
               "time": 2,
-              "x": -7.665,
-              "y": 0.3675
+              "x": -10.22,
+              "y": 0.49
             },
             {
               "time": 2.6667,
-              "x": -3.8325,
-              "y": 0.18
+              "x": -5.11,
+              "y": 0.24
             }
           ],
           "scale": [
             {
-              "x": 0.759,
-              "y": 0.759,
+              "x": 1.012,
+              "y": 1.012,
               "time": 0.0
             },
             {
               "time": 1,
-              "x": 0.75,
-              "y": 0.75
+              "x": 1.0,
+              "y": 1.0
             },
             {
               "time": 2.3333,
-              "x": 0.7613,
-              "y": 0.7613
+              "x": 1.015,
+              "y": 1.015
             },
             {
               "time": 2.6667,
-              "x": 0.759,
-              "y": 0.759
+              "x": 1.012,
+              "y": 1.012
             }
           ]
         },
@@ -1183,8 +1183,8 @@
             },
             {
               "time": 1.3333,
-              "x": -5.01,
-              "y": 2.6025
+              "x": -6.68,
+              "y": 3.47
             },
             {
               "time": 2.6667
@@ -1198,8 +1198,8 @@
             },
             {
               "time": 1.3333,
-              "x": -4.1175,
-              "y": -2.3625
+              "x": -5.49,
+              "y": -3.15
             },
             {
               "time": 2.6667
@@ -1221,8 +1221,8 @@
             },
             {
               "time": 1.3333,
-              "x": 6.2625,
-              "y": -6.48
+              "x": 8.35,
+              "y": -8.64
             },
             {
               "time": 2.6667
@@ -1244,8 +1244,8 @@
             },
             {
               "time": 1.3333,
-              "x": 1.035,
-              "y": 2.355
+              "x": 1.38,
+              "y": 3.14
             },
             {
               "time": 2.6667
@@ -1571,8 +1571,8 @@
             0,
             2
           ],
-          "width": 92,
-          "height": 107
+          "width": 122,
+          "height": 143
         }
       },
       "owl_beak_2": {
@@ -1889,8 +1889,8 @@
             4,
             6
           ],
-          "width": 65,
-          "height": 92
+          "width": 86,
+          "height": 122
         }
       },
       "owl_body": {
@@ -2785,53 +2785,53 @@
             48,
             62
           ],
-          "width": 567,
-          "height": 550
+          "width": 756,
+          "height": 733
         }
       },
       "owl_crest": {
         "owl_crest": {
-          "x": 63.8175,
-          "y": -13.6875,
+          "x": 85.09,
+          "y": -18.25,
           "rotation": -68.16,
-          "width": 159,
-          "height": 123
+          "width": 212,
+          "height": 164
         }
       },
       "owl_eye_left_1": {
         "owl_eye_left_1": {
-          "x": 88.7175,
-          "y": -2.0475,
+          "x": 118.29,
+          "y": -2.73,
           "rotation": -86.59,
-          "width": 121,
-          "height": 189
+          "width": 161,
+          "height": 252
         }
       },
       "owl_eye_left_2": {
         "owl_eye_left_2": {
-          "x": 3.2175,
-          "y": 10.5825,
+          "x": 4.29,
+          "y": 14.11,
           "rotation": -86.59,
-          "width": 92,
-          "height": 92
+          "width": 123,
+          "height": 122
         }
       },
       "owl_eye_right_1": {
         "owl_eye_right_1": {
-          "x": 84.21,
-          "y": -0.36,
+          "x": 112.28,
+          "y": -0.48,
           "rotation": -124.09,
-          "width": 146,
-          "height": 169
+          "width": 195,
+          "height": 225
         }
       },
       "owl_eye_right_2": {
         "owl_eye_right_2": {
-          "x": 3.9675,
-          "y": 16.275,
+          "x": 5.29,
+          "y": 21.7,
           "rotation": -124.09,
-          "width": 96,
-          "height": 97
+          "width": 128,
+          "height": 129
         }
       },
       "owl_finger_1": {
@@ -3330,8 +3330,8 @@
             32,
             18
           ],
-          "width": 91,
-          "height": 146
+          "width": 121,
+          "height": 195
         }
       },
       "owl_finger_2": {
@@ -3732,8 +3732,8 @@
             40,
             0
           ],
-          "width": 107,
-          "height": 137
+          "width": 142,
+          "height": 182
         }
       },
       "owl_finger_3": {
@@ -4204,8 +4204,8 @@
             0,
             38
           ],
-          "width": 74,
-          "height": 143
+          "width": 99,
+          "height": 190
         }
       },
       "owl_finger_4": {
@@ -4672,17 +4672,17 @@
             16,
             18
           ],
-          "width": 84,
-          "height": 155
+          "width": 112,
+          "height": 207
         }
       },
       "owl_wing_left": {
         "owl_wing_left": {
-          "x": -13.86,
-          "y": 19.5825,
+          "x": -18.48,
+          "y": 26.11,
           "rotation": -115.85,
-          "width": 102,
-          "height": 255
+          "width": 136,
+          "height": 340
         }
       }
     }

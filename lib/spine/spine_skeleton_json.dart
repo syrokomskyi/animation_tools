@@ -24,7 +24,9 @@ class SpineSkeletonJson {
     final newJson = json.map<String, dynamic>(
       (String name, dynamic value) => MapEntry<String, dynamic>(
         name,
-        needToScaleRootFields.contains(name) ? _scale(json, s) : value,
+        needToScaleRootFields.contains(name)
+            ? _scale(value as Map<String, dynamic>, s)
+            : value,
       ),
     );
     file.writeAsStringSync(newJson.sjson, flush: true);
