@@ -28,13 +28,28 @@ class SpineAnimationTools extends AnimationTools {
 
   static String buildFileNameTexture(String name) => '$name.webp';
 
+  String indent(int n) => (n > 0) ? '\t' * n : '';
+
+  int currentIndentValue = 1;
+
+  String get currentIndent => indent(currentIndentValue);
+
+  void resetCurrentIndent() => currentIndentValue = 1;
+
+  void increaseCurrentIndent() => ++currentIndentValue;
+  void decreaseCurrentIndent() => --currentIndentValue;
+
   @override
   Future<void> check() async {
-    print('\n');
+    print('\n--check'
+        '\n\tsource: `$sourcePath`'
+        '\n');
 
     // 1) Checking availability files.
+    var step = 1;
+    resetCurrentIndent();
     {
-      print('1) Checking availability files'
+      print('$currentIndent$step) Checking availability files'
           ' for animation `${current.path}`...');
       if (!File(pathToFileAtlas).existsSync()) {
         throw Exception('Atlas not found by path `$pathToFileAtlas`.');
@@ -48,13 +63,15 @@ class SpineAnimationTools extends AnimationTools {
         throw Exception('Texture not found by path `$pathToFileTexture`.');
       }
 
-      print('\tSuccess check availability'
+      print('$currentIndent\tSuccess check availability'
           ' for animation `${current.path}`.');
     }
 
     // 2) Checking reference.
+    ++step;
+    resetCurrentIndent();
     {
-      print('2) Checking reference to texture'
+      print('$currentIndent$step) Checking reference to texture'
           ' for animation `${current.path}`...');
 
       final textureAtlas = SpineTextureAtlas(File(pathToFileAtlas));
@@ -63,7 +80,7 @@ class SpineAnimationTools extends AnimationTools {
             ' not found into the file `$pathToFileAtlas`.');
       }
 
-      print('\tSuccess check reference to texture'
+      print('$currentIndent\tSuccess check reference to texture'
           ' for animation `${current.path}`.');
     }
   }
@@ -72,28 +89,39 @@ class SpineAnimationTools extends AnimationTools {
   Future<void> copy(String destinationPath) async {
     assert(destinationPath.isNotEmpty);
 
-    print('\n');
+    print('\n--copy'
+        '\n\tsource: `$sourcePath`'
+        '\n\tdestinationPath: `$destinationPath`'
+        '\n');
 
     // 1) Copy files.
+    var step = 1;
+    resetCurrentIndent();
     {
       final destination = Directory(destinationPath);
-      print('1) Copying animation'
+      print('$currentIndent$step) Copying animation'
           ' from `${current.path}` to `${destination.path}`...');
+      increaseCurrentIndent();
       _copyWithRenameFiles(current, destination);
+      decreaseCurrentIndent();
       current = destination;
-      print('\tSuccess copy animation'
+      print('$currentIndent\tSuccess copy animation'
           ' from `${current.path}` to `${destination.path}`.');
     }
 
     // 2) Rename dependencies into the file [fileAtlas].
+    ++step;
+    resetCurrentIndent();
     {
       final p = '${current.path}/$fileAtlas';
-      print('2) Renaming dependencies into the file `$p`...');
+      print('$currentIndent$step) Renaming dependencies into the file `$p`...');
       final oldFilePattern = buildFileNameTexture(sourceFolder);
       final newFilePattern = buildFileNameTexture(currentFolder);
       final file = File(p);
+      increaseCurrentIndent();
       _renameContentFile(file, oldFilePattern, newFilePattern);
-      print('\tSuccess rename dependencies into the file `$p`.');
+      decreaseCurrentIndent();
+      print('$currentIndent\tSuccess rename dependencies into the file `$p`.');
     }
   }
 
@@ -101,12 +129,17 @@ class SpineAnimationTools extends AnimationTools {
   Future<void> scale(num scale) async {
     assert(scale > 0);
 
-    print('\n');
+    print('\n--scale'
+        '\n\tsource: `$sourcePath`'
+        '\n\tscale: $scale'
+        '\n');
 
     // 1) Scale texture.
+    var step = 1;
+    resetCurrentIndent();
     {
       final p = pathToFileTexture;
-      print('1) Scaling texture `$p` to $scale...');
+      print('$currentIndent$step) Scaling texture `$p` to $scale...');
 
       final file = File(p);
       final bytes = file.readAsBytesSync();
@@ -136,31 +169,35 @@ class SpineAnimationTools extends AnimationTools {
       file.writeAsBytesSync(compressed, flush: true);
       */
 
-      print('\tSuccess scaling texture `$p` to $scale.');
+      print('$currentIndent\tSuccess scaling texture `$p` to $scale.');
     }
 
     // 2) Scale atlas.
+    ++step;
+    resetCurrentIndent();
     {
       final p = pathToFileAtlas;
-      print('2) Scaling atlas `$p` to $scale...');
+      print('$currentIndent$step) Scaling atlas `$p` to $scale...');
 
       final file = File(p);
       final textureAtlas = SpineTextureAtlas(file);
       textureAtlas.scaleAndSave(scale);
 
-      print('\tSuccess scaling atlas `$p` to $scale.');
+      print('$currentIndent\tSuccess scaling atlas `$p` to $scale.');
     }
 
     // 3) Scale skeleton.
+    ++step;
+    resetCurrentIndent();
     {
       final p = pathToFileSkeleton;
-      print('3) Scaling skeleton `$p` to $scale...');
+      print('$currentIndent$step) Scaling skeleton `$p` to $scale...');
 
       final file = File(p);
       final skeleton = SpineSkeletonJson(file);
       skeleton.scaleAndSave(scale);
 
-      print('\tSuccess scaling skeleton `$p` to $scale.');
+      print('$currentIndent\tSuccess scaling skeleton `$p` to $scale.');
     }
   }
 
@@ -171,7 +208,7 @@ class SpineAnimationTools extends AnimationTools {
     current.listSync(recursive: false).forEach((final entity) {
       if (entity is Directory) {
         final p = '${destination.absolute.path}/${path.basename(entity.path)}';
-        print('\tDirectory `$p`');
+        print('${currentIndent}Directory `$p`');
         final newDir = Directory(p);
         newDir.createSync();
         _copyWithRenameFiles(entity.absolute, newDir);
@@ -185,7 +222,7 @@ class SpineAnimationTools extends AnimationTools {
         final renamedBasename =
             basename.replaceFirst(sourceFolder, destinationFolder);
         final p = '${destination.path}/$renamedBasename';
-        print('\tRenamed file `$pathToFile` -> `$p`');
+        print('${currentIndent}Renamed file `$pathToFile` -> `$p`');
         entity.copySync(p);
         return;
       }
