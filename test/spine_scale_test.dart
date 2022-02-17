@@ -8,16 +8,17 @@ import 'package:test/test.dart';
 /// See inner classes tests into the `spine_texture_atlas_test.dart`.
 void main() {
   test('SpineAnimationTools scale', () async {
-    const sourcePath = 'test/data/owl_100';
-    const expectedPath = 'test/data/owl_75_expected';
+    const sourceFolder = 'owl_100';
+    const sourcePath = 'test/data/$sourceFolder';
+    const expectedFolder = 'owl_75_expected';
+    const expectedPath = 'test/data/$expectedFolder';
     const scale = 0.75;
+
+    const copyFolder = 'owl_75';
+    const copyPath = 'test/data/$copyFolder';
     final tools = SpineAnimationTools(sourcePath);
-
-    final sourceBytes = File('$sourcePath/owl_100.webp').readAsBytesSync();
-    final sourceImage = decodeImage(sourceBytes)!;
-
-    const copyPath = 'test/data/owl_75';
     await tools.copy(copyPath);
+
     await tools.scale(scale);
 
     // atlas
@@ -96,6 +97,10 @@ void main() {
 
     // texture
     {
+      final sourceBytes =
+          File('$sourcePath/$sourceFolder.webp').readAsBytesSync();
+      final sourceImage = decodeImage(sourceBytes)!;
+
       final bytes = File(tools.pathToFileTexture).readAsBytesSync();
       final image = decodeImage(bytes)!;
       expect(image.width, (sourceImage.width * scale).round());
