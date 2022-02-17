@@ -48,7 +48,6 @@ doc/api/
 *.class
 
 # Generated files
-bin/
 gen/
 out/
 
