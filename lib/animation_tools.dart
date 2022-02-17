@@ -26,6 +26,8 @@ abstract class AnimationTools {
 
   Future<void> copy(String destinationPath);
 
+  Future<void> moveAnimation(String nameFrom, String nameTo);
+
   Future<void> removeAnimation(String name);
 
   Future<void> scale(num scale);
