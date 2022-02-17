@@ -5,6 +5,8 @@ import 'package:animation_tools/spine/spine_animation_tools.dart';
 import 'package:image/image.dart';
 import 'package:test/test.dart';
 
+import 'expect_json_helper.dart';
+
 /// See inner classes tests into the `spine_texture_atlas_test.dart`.
 void main() {
   test('SpineAnimationTools scale', () async {
@@ -36,7 +38,7 @@ void main() {
           .jsonMap;
 
       {
-        final e = ExpectTest(
+        final e = ExpectJsonHelper(
           json['skeleton'],
           ejson['skeleton'],
         );
@@ -47,7 +49,7 @@ void main() {
       }
 
       {
-        final e = ExpectTest(
+        final e = ExpectJsonHelper(
           (json['bones'] as List)[1],
           (ejson['bones'] as List)[1],
         );
@@ -58,7 +60,7 @@ void main() {
       }
 
       {
-        final e = ExpectTest(
+        final e = ExpectJsonHelper(
           (json['transform'] as List)[0],
           (ejson['transform'] as List)[0],
         );
@@ -78,7 +80,7 @@ void main() {
           // ignore: avoid_dynamic_calls
           ejson['animations']['idle']['bones']['bone'] as Map<String, dynamic>;
       {
-        final e = ExpectTest(
+        final e = ExpectJsonHelper(
           (bone['rotate'] as List)[1],
           (ebone['rotate'] as List)[1],
         );
@@ -86,7 +88,7 @@ void main() {
         e.test('angle');
       }
       {
-        final e = ExpectTest(
+        final e = ExpectJsonHelper(
           (bone['translate'] as List)[1],
           (ebone['translate'] as List)[1],
         );
@@ -107,19 +109,4 @@ void main() {
       expect(image.height, (sourceImage.height * scale).round());
     }
   });
-}
-
-class ExpectTest {
-  final Map<String, dynamic> o;
-  final Map<String, dynamic> eo;
-
-  const ExpectTest(dynamic o, dynamic eo)
-      : o = o as Map<String, dynamic>,
-        eo = eo as Map<String, dynamic>;
-
-  void test(String name) => expect(
-        o[name],
-        eo[name],
-        reason: 'original\n${o.sjson}\nexpected\n${eo.sjson}',
-      );
 }
