@@ -8,19 +8,19 @@ import 'package:test/test.dart';
 import 'expect_json_helper.dart';
 
 /// See inner classes tests into the `spine_texture_atlas_test.dart`.
-void main() {
+void main() async {
+  const sourceFolder = 'owl';
+  const sourcePath = 'test/data/$sourceFolder';
+  const expectedFolder = 'owl_75_expected';
+  const expectedPath = 'test/data/$expectedFolder';
+  const scale = 0.75;
+
+  const copyFolder = 'owl_75';
+  const copyPath = 'test/data/$copyFolder';
+  final tools = SpineAnimationTools(sourcePath);
+  await tools.copy(copyPath);
+
   test('SpineAnimationTools scale', () async {
-    const sourceFolder = 'owl';
-    const sourcePath = 'test/data/$sourceFolder';
-    const expectedFolder = 'owl_75_expected';
-    const expectedPath = 'test/data/$expectedFolder';
-    const scale = 0.75;
-
-    const copyFolder = 'owl_75';
-    const copyPath = 'test/data/$copyFolder';
-    final tools = SpineAnimationTools(sourcePath);
-    await tools.copy(copyPath);
-
     await tools.scale(scale);
 
     // atlas

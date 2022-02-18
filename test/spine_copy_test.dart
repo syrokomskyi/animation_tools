@@ -3,16 +3,16 @@ import 'dart:io' show Directory, File;
 import 'package:animation_tools/spine/spine_animation_tools.dart';
 import 'package:test/test.dart';
 
-void main() {
+void main() async {
+  const sourceFolder = 'owl';
+  const sourcePath = 'test/data/$sourceFolder';
+  const copyFolder = 'owl_75';
+  const copyPath = 'test/data/$copyFolder';
+
+  final tools = SpineAnimationTools(sourcePath);
+  await tools.copy(copyPath);
+
   test('SpineAnimationTools copy', () async {
-    const sourceFolder = 'owl';
-    const sourcePath = 'test/data/$sourceFolder';
-    const copyFolder = 'owl_75';
-    const copyPath = 'test/data/$copyFolder';
-
-    final tools = SpineAnimationTools(sourcePath);
-    await tools.copy(copyPath);
-
     expect(Directory(copyPath).existsSync(), true);
     expect(File('$copyPath/$copyFolder.atlas').existsSync(), true);
     expect(File('$copyPath/$copyFolder.json').existsSync(), true);
