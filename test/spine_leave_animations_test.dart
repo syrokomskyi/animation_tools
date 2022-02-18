@@ -7,11 +7,11 @@ import 'expect_json_helper.dart';
 void main() async {
   const sourceFolder = 'spineboy';
   const sourcePath = 'test/data/$sourceFolder';
-  const expectedFolder = 'spineboy_leave_animations_expected';
+  const expectedFolder = '${sourceFolder}_leave_animations_expected';
   const expectedPath = 'test/data/$expectedFolder';
   const animations = <String>['walk', 'idle', 'run'];
 
-  const copyFolder = 'spineboy_leave_animations';
+  const copyFolder = '${sourceFolder}_leave_animations';
   const copyPath = 'test/data/$copyFolder';
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);

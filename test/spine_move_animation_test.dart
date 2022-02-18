@@ -7,12 +7,12 @@ import 'expect_json_helper.dart';
 void main() async {
   const sourceFolder = 'owl';
   const sourcePath = 'test/data/$sourceFolder';
-  const expectedFolder = 'owl_move_animation_expected';
+  const expectedFolder = '${sourceFolder}_move_animation_expected';
   const expectedPath = 'test/data/$expectedFolder';
   const animationMoveFrom = 'idle_offset';
   const animationMoveTo = 'idle';
 
-  const copyFolder = 'owl_move_animation';
+  const copyFolder = '${sourceFolder}_move_animation';
   const copyPath = 'test/data/$copyFolder';
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);

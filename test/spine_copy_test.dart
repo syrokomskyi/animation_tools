@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 void main() async {
   const sourceFolder = 'owl';
   const sourcePath = 'test/data/$sourceFolder';
-  const copyFolder = 'owl_75';
+  const copyFolder = '${sourceFolder}_75';
   const copyPath = 'test/data/$copyFolder';
 
   final tools = SpineAnimationTools(sourcePath);
