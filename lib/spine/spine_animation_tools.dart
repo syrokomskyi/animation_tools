@@ -95,11 +95,25 @@ class SpineAnimationTools extends AnimationTools {
         '\n\tdestinationPath: `$destinationPath`'
         '\n');
 
-    // 1) Copy files.
+    final destination = Directory(destinationPath);
+
+    // 1) Clear destination path.
     var step = 1;
     resetCurrentIndent();
     {
-      final destination = Directory(destinationPath);
+      print('$currentIndent$step) Clearing destination path'
+          ' `${destination.path}`...');
+      if (destination.existsSync()) {
+        destination.deleteSync(recursive: true);
+      }
+      print('$currentIndent\tSuccess clear destination path'
+          ' `${destination.path}`.');
+    }
+
+    // 2) Copy files.
+    ++step;
+    resetCurrentIndent();
+    {
       print('$currentIndent$step) Copying animation'
           ' from `${current.path}` to `${destination.path}`...');
       increaseCurrentIndent();
@@ -110,7 +124,7 @@ class SpineAnimationTools extends AnimationTools {
           ' from `${current.path}` to `${destination.path}`.');
     }
 
-    // 2) Rename dependencies into the file [fileAtlas].
+    // 3) Rename dependencies into the file [fileAtlas].
     ++step;
     resetCurrentIndent();
     {
@@ -123,6 +137,26 @@ class SpineAnimationTools extends AnimationTools {
       _renameContentFile(file, oldFilePattern, newFilePattern);
       decreaseCurrentIndent();
       print('$currentIndent\tSuccess rename dependencies into the file `$p`.');
+    }
+  }
+
+  @override
+  Future<void> delete() async {
+    print('\n--delete'
+        '\n\tsource: `$sourcePath`'
+        '\n');
+
+    // 1) Delete files.
+    const step = 1;
+    resetCurrentIndent();
+    {
+      print('$currentIndent$step) Deleting animation'
+          ' by path `${current.path}`...');
+      if (current.existsSync()) {
+        current.delete(recursive: true);
+      }
+      print('$currentIndent\tSuccess delete animation'
+          ' by path `${current.path}`.');
     }
   }
 
