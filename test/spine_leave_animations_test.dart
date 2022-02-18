@@ -6,7 +6,7 @@ import 'expect_json_helper.dart';
 
 void main() {
   test('SpineAnimationTools leave_animations', () async {
-    const sourceFolder = 'spineboy_100';
+    const sourceFolder = 'spineboy';
     const sourcePath = 'test/data/$sourceFolder';
     const expectedFolder = 'spineboy_leave_animations_expected';
     const expectedPath = 'test/data/$expectedFolder';

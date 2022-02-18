@@ -10,7 +10,7 @@ import 'expect_json_helper.dart';
 /// See inner classes tests into the `spine_texture_atlas_test.dart`.
 void main() {
   test('SpineAnimationTools scale', () async {
-    const sourceFolder = 'owl_100';
+    const sourceFolder = 'owl';
     const sourcePath = 'test/data/$sourceFolder';
     const expectedFolder = 'owl_75_expected';
     const expectedPath = 'test/data/$expectedFolder';

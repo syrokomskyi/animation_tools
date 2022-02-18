@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('SpineAnimationTools copy', () async {
-    const sourceFolder = 'owl_100';
+    const sourceFolder = 'owl';
     const sourcePath = 'test/data/$sourceFolder';
     const copyFolder = 'owl_75';
     const copyPath = 'test/data/$copyFolder';

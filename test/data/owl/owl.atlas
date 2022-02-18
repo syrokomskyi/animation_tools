@@ -1,97 +1,97 @@
 
-owl_75.webp
-size: 831, 627
+owl.webp
+size: 1108, 836
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
 owl_beak_1
   rotate: false
-  xy: 2, 518
-  size: 92, 107
-  orig: 92, 107
+  xy: 2, 690
+  size: 122, 143
+  orig: 122, 143
   offset: 0, 0
   index: -1
 owl_beak_2
   rotate: false
-  xy: 99, 7
-  size: 65, 92
-  orig: 65, 92
+  xy: 132, 9
+  size: 86, 122
+  orig: 86, 122
   offset: 0, 0
   index: -1
 owl_body
   rotate: false
-  xy: 2, 75
-  size: 567, 550
-  orig: 567, 550
+  xy: 2, 100
+  size: 756, 733
+  orig: 756, 733
   offset: 0, 0
   index: -1
 owl_crest
   rotate: false
-  xy: 671, 501
-  size: 158, 122
-  orig: 159, 123
+  xy: 895, 668
+  size: 210, 162
+  orig: 212, 164
   offset: 1, 1
   index: -1
 owl_eye_left_1
   rotate: false
-  xy: 671, 313
-  size: 118, 187
-  orig: 121, 189
+  xy: 895, 417
+  size: 157, 249
+  orig: 161, 252
   offset: 2, 2
   index: -1
 owl_eye_left_2
   rotate: false
-  xy: 389, 2
-  size: 91, 90
-  orig: 92, 92
+  xy: 519, 3
+  size: 121, 120
+  orig: 123, 122
   offset: 1, 1
   index: -1
 owl_eye_right_1
   rotate: false
-  xy: 570, 146
-  size: 143, 166
-  orig: 146, 169
+  xy: 760, 194
+  size: 191, 221
+  orig: 195, 225
   offset: 2, 2
   index: -1
 owl_eye_right_2
   rotate: false
-  xy: 715, 59
-  size: 94, 95
-  orig: 96, 97
+  xy: 953, 79
+  size: 125, 127
+  orig: 128, 129
   offset: 2, 1
   index: -1
 owl_finger_1
   rotate: false
-  xy: 482, 53
-  size: 91, 146
-  orig: 91, 146
+  xy: 642, 70
+  size: 121, 194
+  orig: 121, 195
   offset: 0, 0
   index: -1
 owl_finger_2
   rotate: false
-  xy: 2, 13
-  size: 107, 137
-  orig: 107, 137
+  xy: 2, 17
+  size: 142, 182
+  orig: 142, 182
   offset: 0, 0
   index: -1
 owl_finger_3
   rotate: false
-  xy: 566, 2
-  size: 74, 143
-  orig: 74, 143
+  xy: 754, 2
+  size: 99, 190
+  orig: 99, 190
   offset: 0, 0
   index: -1
 owl_finger_4
   rotate: false
-  xy: 715, 156
-  size: 83, 155
-  orig: 84, 155
+  xy: 953, 208
+  size: 110, 207
+  orig: 112, 207
   offset: 2, 0
   index: -1
 owl_wing_left
   rotate: false
-  xy: 570, 372
-  size: 100, 253
-  orig: 102, 255
+  xy: 760, 496
+  size: 133, 337
+  orig: 136, 340
   offset: 2, 2
   index: -1

@@ -6,7 +6,7 @@ import 'expect_json_helper.dart';
 
 void main() {
   test('SpineAnimationTools move_animation', () async {
-    const sourceFolder = 'owl_100';
+    const sourceFolder = 'owl';
     const sourcePath = 'test/data/$sourceFolder';
     const expectedFolder = 'owl_move_animation_expected';
     const expectedPath = 'test/data/$expectedFolder';
