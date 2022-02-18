@@ -1,0 +1,97 @@
+
+owl_75.webp
+size: 831, 627
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+owl_beak_1
+  rotate: false
+  xy: 2, 518
+  size: 92, 107
+  orig: 92, 107
+  offset: 0, 0
+  index: -1
+owl_beak_2
+  rotate: false
+  xy: 99, 7
+  size: 65, 92
+  orig: 65, 92
+  offset: 0, 0
+  index: -1
+owl_body
+  rotate: false
+  xy: 2, 75
+  size: 567, 550
+  orig: 567, 550
+  offset: 0, 0
+  index: -1
+owl_crest
+  rotate: false
+  xy: 671, 501
+  size: 158, 122
+  orig: 159, 123
+  offset: 1, 1
+  index: -1
+owl_eye_left_1
+  rotate: false
+  xy: 671, 313
+  size: 118, 187
+  orig: 121, 189
+  offset: 2, 2
+  index: -1
+owl_eye_left_2
+  rotate: false
+  xy: 389, 2
+  size: 91, 90
+  orig: 92, 92
+  offset: 1, 1
+  index: -1
+owl_eye_right_1
+  rotate: false
+  xy: 570, 146
+  size: 143, 166
+  orig: 146, 169
+  offset: 2, 2
+  index: -1
+owl_eye_right_2
+  rotate: false
+  xy: 715, 59
+  size: 94, 95
+  orig: 96, 97
+  offset: 2, 1
+  index: -1
+owl_finger_1
+  rotate: false
+  xy: 482, 53
+  size: 91, 146
+  orig: 91, 146
+  offset: 0, 0
+  index: -1
+owl_finger_2
+  rotate: false
+  xy: 2, 13
+  size: 107, 137
+  orig: 107, 137
+  offset: 0, 0
+  index: -1
+owl_finger_3
+  rotate: false
+  xy: 566, 2
+  size: 74, 143
+  orig: 74, 143
+  offset: 0, 0
+  index: -1
+owl_finger_4
+  rotate: false
+  xy: 715, 156
+  size: 83, 155
+  orig: 84, 155
+  offset: 2, 0
+  index: -1
+owl_wing_left
+  rotate: false
+  xy: 570, 372
+  size: 100, 253
+  orig: 102, 255
+  offset: 2, 2
+  index: -1
