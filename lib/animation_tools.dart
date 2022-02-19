@@ -35,4 +35,16 @@ abstract class AnimationTools {
   Future<void> removeAnimation(String name);
 
   Future<void> scale(num scale);
+
+  String indent(int n) => (n > 0) ? '\t' * n : '';
+
+  int currentIndentValue = 1;
+
+  String get currentIndent => indent(currentIndentValue);
+
+  void resetCurrentIndent() => currentIndentValue = 1;
+
+  void increaseCurrentIndent() => ++currentIndentValue;
+
+  void decreaseCurrentIndent() => --currentIndentValue;
 }

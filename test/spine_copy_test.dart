@@ -6,8 +6,10 @@ import 'package:test/test.dart';
 void main() async {
   const sourceFolder = 'owl';
   const sourcePath = 'test/data/$sourceFolder';
+
+  final tempPath = Directory.systemTemp.createTempSync().path;
   const copyFolder = '${sourceFolder}_75';
-  const copyPath = 'test/data/$copyFolder';
+  final copyPath = '$tempPath/test/data/$copyFolder';
 
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);

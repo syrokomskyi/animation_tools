@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:animation_tools/spine/spine_animation_tools.dart';
 import 'package:animation_tools/spine/spine_skeleton_json.dart';
 import 'package:test/test.dart';
@@ -7,13 +9,15 @@ import 'expect_json_helper.dart';
 void main() async {
   const sourceFolder = 'owl';
   const sourcePath = 'test/data/$sourceFolder';
+
+  final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_move_animation_expected';
-  const expectedPath = 'test/data/$expectedFolder';
+  final expectedPath = '$tempPath/test/data/$expectedFolder';
   const animationMoveFrom = 'idle_offset';
   const animationMoveTo = 'idle';
 
   const copyFolder = '${sourceFolder}_move_animation';
-  const copyPath = 'test/data/$copyFolder';
+  final copyPath = '$tempPath/test/data/$copyFolder';
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);
 

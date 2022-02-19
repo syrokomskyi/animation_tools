@@ -28,18 +28,6 @@ class SpineAnimationTools extends AnimationTools {
 
   static String buildFileNameTexture(String name) => '$name.webp';
 
-  String indent(int n) => (n > 0) ? '\t' * n : '';
-
-  int currentIndentValue = 1;
-
-  String get currentIndent => indent(currentIndentValue);
-
-  void resetCurrentIndent() => currentIndentValue = 1;
-
-  void increaseCurrentIndent() => ++currentIndentValue;
-
-  void decreaseCurrentIndent() => --currentIndentValue;
-
   @override
   Future<void> check() async {
     print('\n--check'

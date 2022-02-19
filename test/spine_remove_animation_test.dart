@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:animation_tools/spine/spine_animation_tools.dart';
 import 'package:animation_tools/spine/spine_skeleton_json.dart';
 import 'package:test/test.dart';
@@ -7,14 +9,17 @@ import 'expect_json_helper.dart';
 void main() async {
   const sourceFolder = 'owl';
   const sourcePath = 'test/data/$sourceFolder';
+
+  final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_remove_animation_expected';
-  const expectedPath = 'test/data/$expectedFolder';
+  final expectedPath = '$tempPath/test/data/$expectedFolder';
   const animationForRemove = 'idle';
 
   const copyFolder = '${sourceFolder}_remove_animation';
-  const copyPath = 'test/data/$copyFolder';
+  final copyPath = '$tempPath/test/data/$copyFolder';
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);
+
 
   test('SpineAnimationTools remove_animation', () async {
     await tools.removeAnimation(animationForRemove);

@@ -1,4 +1,4 @@
-import 'dart:io' show File;
+import 'dart:io' show Directory, File;
 
 import 'package:animation_tools/extensions/json_extension.dart';
 import 'package:animation_tools/spine/spine_animation_tools.dart';
@@ -11,12 +11,14 @@ import 'expect_json_helper.dart';
 void main() async {
   const sourceFolder = 'owl';
   const sourcePath = 'test/data/$sourceFolder';
+
+  final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_75_expected';
-  const expectedPath = 'test/data/$expectedFolder';
+  final expectedPath = '$tempPath/test/data/$expectedFolder';
   const scale = 0.75;
 
   const copyFolder = '${sourceFolder}_75';
-  const copyPath = 'test/data/$copyFolder';
+  final copyPath = '$tempPath/test/data/$copyFolder';
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);
 
