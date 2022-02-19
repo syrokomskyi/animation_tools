@@ -3,11 +3,11 @@ description: A command-line App for processing animations.
 version: 1.0.0
 
 environment:
-  sdk: '>=2.16.0 <3.0.0'
+  sdk: '>=2.16.1 <3.0.0'
 
 
 dependencies:
-  image: ^3.1.1
+  image: ^3.1.3
   path: ^1.8.0
 
 
