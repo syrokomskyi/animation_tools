@@ -20,7 +20,6 @@ void main() async {
   final tools = SpineAnimationTools(sourcePath);
   await tools.copy(copyPath);
 
-
   test('SpineAnimationTools remove_animation', () async {
     await tools.removeAnimation(animationForRemove);
 
