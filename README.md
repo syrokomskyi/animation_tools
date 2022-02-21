@@ -1,4 +1,6 @@
-Tools for processing animations.
+# Animation Tools
+
+The tools for processing animations.
 
 ## Supported formats
 
@@ -6,6 +8,9 @@ Tools for processing animations.
 
 
 ## Structure
+
 Entrypoint: `bin/`
+
 Library code: `lib/`
+
 Example unit test: `test/`
