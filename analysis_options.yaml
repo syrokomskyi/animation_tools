@@ -1,8 +1,6 @@
 # Source of linter options:
 # http://dart-lang.github.io/linter/lints/options/options.html
 
-include: package:flutter_lints/flutter.yaml
-
 analyzer:
   strong-mode:
     implicit-casts: false
