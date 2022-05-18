@@ -8,7 +8,7 @@ import 'spine_skeleton_json.dart';
 import 'spine_texture_atlas.dart';
 
 class SpineAnimationTools extends AnimationTools {
-  SpineAnimationTools(String sourcePath) : super(sourcePath);
+  SpineAnimationTools(super.sourcePath);
 
   String get fileAtlas => buildFileNameAtlas(currentFolder);
 

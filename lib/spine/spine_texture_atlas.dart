@@ -107,20 +107,20 @@ abstract class SizedElement<T extends num> {
 
 // xy: 2, 690
 class XY extends SizedElement<int> {
-  XY(String raw) : super(raw);
+  XY(super.raw);
 }
 
 // size: 122, 143
 class Size extends SizedElement<int> {
-  Size(String raw) : super(raw);
+  Size(super.raw);
 }
 
 // orig: 122, 143
 class Orig extends SizedElement<int> {
-  Orig(String raw) : super(raw);
+  Orig(super.raw);
 }
 
 // offset: 2, 3
 class Offset extends SizedElement<int> {
-  Offset(String raw) : super(raw);
+  Offset(super.raw);
 }
