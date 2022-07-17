@@ -12,7 +12,7 @@ void main() async {
 
   final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_remove_animation_expected';
-  final expectedPath = '$tempPath/test/data/$expectedFolder';
+  const expectedPath = 'test/data/$expectedFolder';
   const animationForRemove = 'idle';
 
   const copyFolder = '${sourceFolder}_remove_animation';

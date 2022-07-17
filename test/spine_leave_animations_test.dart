@@ -12,7 +12,7 @@ void main() async {
 
   final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_leave_animations_expected';
-  final expectedPath = '$tempPath/test/data/$expectedFolder';
+  const expectedPath = 'test/data/$expectedFolder';
   const animations = <String>['walk', 'idle', 'run'];
 
   const copyFolder = '${sourceFolder}_leave_animations';

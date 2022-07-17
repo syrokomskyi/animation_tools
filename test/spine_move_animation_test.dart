@@ -12,7 +12,7 @@ void main() async {
 
   final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_move_animation_expected';
-  final expectedPath = '$tempPath/test/data/$expectedFolder';
+  const expectedPath = 'test/data/$expectedFolder';
   const animationMoveFrom = 'idle_offset';
   const animationMoveTo = 'idle';
 

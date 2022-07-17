@@ -14,7 +14,7 @@ void main() async {
 
   final tempPath = Directory.systemTemp.createTempSync().path;
   const expectedFolder = '${sourceFolder}_75_expected';
-  final expectedPath = '$tempPath/test/data/$expectedFolder';
+  const expectedPath = 'test/data/$expectedFolder';
   const scale = 0.75;
 
   const copyFolder = '${sourceFolder}_75';
