@@ -4,6 +4,10 @@ import '../extensions/json_extension.dart';
 import '../extensions/num_extension.dart';
 
 class SpineSkeletonJson {
+  SpineSkeletonJson(this.file) : assert(file.existsSync(), file.toString());
+
+  factory SpineSkeletonJson.path(String path) => SpineSkeletonJson(File(path));
+
   static const needToScaleRootFields = <String>[
     'skeleton',
   ];
@@ -19,10 +23,6 @@ class SpineSkeletonJson {
   String get raw => file.readAsStringSync();
 
   Map<String, dynamic> get json => raw.jsonMap;
-
-  SpineSkeletonJson(this.file) : assert(file.existsSync(), file.toString());
-
-  factory SpineSkeletonJson.path(String path) => SpineSkeletonJson(File(path));
 
   Map<String, dynamic> leaveAnimations(List<String> names) {
     final newJson = json;

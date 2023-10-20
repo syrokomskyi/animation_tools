@@ -3,9 +3,9 @@ import 'dart:io' show File;
 import '../extensions/num_extension.dart';
 
 class SpineTextureAtlas {
-  final File file;
-
   SpineTextureAtlas(this.file) : assert(file.existsSync());
+
+  final File file;
 
   bool hasReferenceToTexture(String name) {
     assert(name.isNotEmpty);
@@ -73,6 +73,7 @@ class SizedElementFactory {
 /// \warning Today recognize only with integer numbers.
 /// \todo Recognize double numbers.
 abstract class SizedElement<T extends num> {
+  SizedElement(this.raw) : assert(raw.isNotEmpty);
   String raw;
 
   List<num> get numbers => RegExp(r'\d+')
@@ -91,8 +92,6 @@ abstract class SizedElement<T extends num> {
       raw = raw.replaceFirstMapped(RegExp(r', \d+'), (match) => ', $value');
 
   num v(int i) => numbers[i];
-
-  SizedElement(this.raw) : assert(raw.isNotEmpty);
 
   void scale(num s) {
     final a = x * s.toDouble();

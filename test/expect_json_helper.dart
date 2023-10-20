@@ -2,12 +2,12 @@ import 'package:animation_tools/extensions/json_extension.dart';
 import 'package:test/test.dart';
 
 class ExpectJsonHelper {
-  final Map<String, dynamic> o;
-  final Map<String, dynamic> eo;
-
   const ExpectJsonHelper(dynamic o, dynamic eo)
       : o = o as Map<String, dynamic>,
         eo = eo as Map<String, dynamic>;
+
+  final Map<String, dynamic> o;
+  final Map<String, dynamic> eo;
 
   void test(String name) {
     final dynamic r = name.isEmpty ? o : o[name];

@@ -3,6 +3,13 @@ import 'dart:io' show Directory;
 import 'package:path/path.dart' as path;
 
 abstract class AnimationTools {
+  AnimationTools(String currentPath)
+      : assert(currentPath.isNotEmpty),
+        source = Directory(currentPath) {
+    assert(source.existsSync());
+    current = source;
+  }
+
   final Directory source;
 
   late Directory current;
@@ -14,13 +21,6 @@ abstract class AnimationTools {
   String get currentFolder => path.basename(current.path);
 
   String get currentPath => current.path;
-
-  AnimationTools(String currentPath)
-      : assert(currentPath.isNotEmpty),
-        source = Directory(currentPath) {
-    assert(source.existsSync());
-    current = source;
-  }
 
   Future<void> check();
 
