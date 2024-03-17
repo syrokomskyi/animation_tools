@@ -170,3 +170,5 @@ fabric.properties
 /test/data/spineboy_leave_animations
 
 /.vscode/settings.json
+
+/build
