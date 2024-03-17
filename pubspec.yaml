@@ -6,8 +6,8 @@ topics:
   - animation
   - tools
   - transform
-  - scale
-  - move
+  - rename
+  - copy
 
 # Format:
 #   version: major.minor.patch
