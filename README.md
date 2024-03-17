@@ -88,7 +88,7 @@ This is one of the animations of the real project. Source: `test/data/owl`.
 ### atlas
 
 <details>
-  <summary>>></summary>
+  <summary>...</summary>
 
 ```text
 owl.webp
@@ -194,7 +194,7 @@ owl_wing_left
 ### json
 
 <details>
-  <summary>>></summary>
+  <summary>...</summary>
 
 ```json
 {
