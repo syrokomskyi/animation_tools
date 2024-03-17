@@ -168,3 +168,5 @@ fabric.properties
 /test/data/owl_move_animation
 /test/data/owl_remove_animation
 /test/data/spineboy_leave_animations
+
+/.vscode/settings.json
