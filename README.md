@@ -1,61 +1,93 @@
 # Animation Tools
 
-The command-line tools for processing animations.
+![Cover - Animation Tools](https://raw.githubusercontent.com/signmotion/animation_tools/master/images/cover.webp)
+
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/animation_tools/master/LICENSE)
+
+The command-line easy-to-use and well-tested Dart's tools for processing animations.
+Feel free to use it in your projects that are useful to the world.
 
 ## Supported formats
 
-* Spine
-
-You can add any animation format you want.
-Or ask me to do it.
+- [Spine](https://esotericsoftware.com)
+- [You can add your own format]
 
 ## What can this tool do?
 
 Run commands below into the terminal from the folder `animation_tools/bin/`.
-For example, [Cmder](https://cmder.net).
+Recommended: [Cmder](https://cmder.net).
 
 ### Work with animation folder
 
 #### Copy animation folder
-`dart main.dart --source path/to/a --copy path/to/b`
+
+```bash
+dart main.dart --source path/to/a --copy path/to/b
+```
 
 #### Scale animation folder
-`dart main.dart --source path/to/b --scale 0.75`
+
+```bash
+dart main.dart --source path/to/b --scale 0.75
+```
 
 ### Working with concrete animation
 
 #### Move and rename animation
-`dart main.dart --source path/to/b --move_animation 'idle idle_1'`
+
+```bash
+dart main.dart --source path/to/b --move_animation 'idle idle_1'
+```
 
 #### Remove animation
-`dart main.dart --source path/to/b --remove_animation 'idle'`
+
+```bash
+dart main.dart --source path/to/b --remove_animation 'idle'
+```
 
 #### Leave only declared animations
-`dart main.dart --source path/to/b --leave_animations 'idle walk run shoot'`
 
-Commands can be written in one line. For example, "copy and scale":
-`dart main.dart --source path/to/a --copy path/to/b --scale 0.75`
+```bash
+dart main.dart --source path/to/b --leave_animations 'idle walk run shoot'
+```
+
+### Advanced use
+
+Commands can be written in one line. For example, `copy and scale`:
+
+```bash
+dart main.dart --source path/to/a --copy path/to/b --scale 0.75
+```
 
 All commands and notes you can look with command:
-`dart main.dart --help`
+
+```bash
+dart main.dart --help
+```
 
 ## Test
 
-All commands and examples you can see in the folder `test`.
+The examples you can see in the folder `test`.
 
-### How run tests
-`dart test`
+```bash
+dart test
+```
 
 ## Project structure
 
 ### Entrypoint
 
-`bin/`
+- `bin` Entrypoint.
+- `lib` Source code.
+- `test` Unit tests with examples.
 
-### Library code
+## Welcome
 
-`lib/`
+Requests and suggestions are warmly welcome.
 
-### Example unit test
+This package is open-source, stable and well-tested. Development happens on
+[GitHub](https://github.com/signmotion/animation_tools). Feel free to report issues
+or create a pull-request there.
 
-`test/`
+General questions are best asked on
+[StackOverflow](https://stackoverflow.com/questions/tagged/animation_tools).
