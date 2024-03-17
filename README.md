@@ -4,7 +4,7 @@
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/animation_tools/master/LICENSE)
 
-The command-line easy-to-use and well-tested Dart's tools for processing animations.
+The standardized command-line easy-to-use and well-tested Dart tool for processing animations in any formats.
 Feel free to use it in your projects that are useful to the world.
 
 ## Supported formats
