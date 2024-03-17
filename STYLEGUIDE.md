@@ -5,8 +5,9 @@ to keep all codebases clean and pristine. This includes high level guidance to h
 decisions in the day-to-day development life.
 
 This extends rules on the
-official [Effective Dart Patterns](https://dart.dev/guides/language/effective-dart). Those rules
-apply unless otherwise specified in this document.
+official [Flutter Style Guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo)
+and [Effective Dart Patterns](https://dart.dev/guides/language/effective-dart). Those rules apply
+unless otherwise specified in this document.
 
 Note that this is not yet an exhaustive guide, and consider it a work in progress. PRs are welcome!
 
@@ -24,7 +25,7 @@ trailing comma.
 
 For the sake of example, let's use a function invocation (the same apply for all cases):
 
-```
+```dart
 // good
 foo(p1, p2, p3)
 
@@ -55,18 +56,18 @@ foo(f1,
 
 ### Imports
 
-* Never include unused or duplicated imports.
-* You must always use relative imports for imports within the AnimationTools library
+- Never include unused or duplicated imports.
+- You must always use relative imports for imports within the `AnimationTools` library
   (internal imports must be relative).
-* Omit `./` for relative imports from the same directory.
-* Avoid importing groups of APIs internally.
-* Order your imports by:
-    * Three main blocks, each separated by exactly one empty line:
-        * Dart SDK dependencies,
-        * External libraries imports,
-        * Internal (same library) imports.
-    * Then, for each block, order alphabetically.
-        * For relative imports, that means further away (more `../`) imports will be first.
+- Omit `./` for relative imports from the same directory.
+- Avoid importing groups of APIs internally.
+- Order your imports by:
+  - Three main blocks, each separated by exactly one empty line:
+    - Dart SDK dependencies,
+    - External libraries/Flutter imports,
+    - Internal (same library) imports.
+  - Then, for each block, order alphabetically.
+    - For relative imports, that means further away (more `../`) imports will be first.
 
 ## Code Structure
 
@@ -80,17 +81,17 @@ Use asserts to detect contract violation.
 
 Example:
 
-````dart
+```dart
 void something(int smaller, int bigger) {
   assert(small < bigger, '`smaller` is not smaller than `bigger`');
   // ...
 }
-````
+```
 
 ## Comments
 
-* For any `//` comments, always add a space after the second slash and before the next character.
-* Use `//` (or block comments) for comments about the code; use `///` for dartdocs about APIs.
+- For any `//` comments, always add a space after the second slash and before the next character.
+- Use `//` (or block comments) for comments about the code; use `///` for dartdocs about APIs.
 
 ### TODO
 
@@ -103,12 +104,12 @@ and the comment, capitalized as a sentence. No need to include a period if it's 
 // bad: missing identifier, mixed-case "TODO" and lowercase comment
 
 // Todo: this thing should be that thing
-final thisThing = 13;
+final thisThing = 12;
 
 // good:
 
 // TODO(wolfenrain): This thing should be that thing
-const thisThing = 13;
+const thisThing = 12;
 ```
 
 ### Dartdocs
