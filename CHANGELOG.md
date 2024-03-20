@@ -3,6 +3,10 @@
 All notable changes to the project `AnimationTools` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## NEXT
+
+- Provided documentation.
+
 ## 0.2.1
 
 - Added CI.
