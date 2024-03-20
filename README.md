@@ -2,10 +2,13 @@
 
 ![Cover - Animation Tools](https://raw.githubusercontent.com/signmotion/animation_tools/master/images/cover.webp)
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/animation_tools/master/LICENSE)
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Pub Package](https://img.shields.io/badge/doc-animation_tools-blue)](https://pub.dartlang.org/packages/animation_tools)
+[![Build Status](https://github.com/signmotion/animation_tools/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/animation_tools/actions/workflows/dart-ci.yml)
+[![Publisher](https://img.shields.io/pub/publisher/animation_tools)](https://pub.dev/publishers/syrokomskyi.com)
 
 The standardized command-line easy-to-use and well-tested Dart tool for processing animations in any formats.
-Feel free to use it in your projects that are useful to the world.
+Feel free to use it in your awesome project.
 
 ## Supported formats
 
@@ -1374,3 +1377,7 @@ or create a pull-request there.
 
 General questions are best asked on
 [StackOverflow](https://stackoverflow.com/questions/tagged/animation_tools).
+
+## TODO
+
+- Support other animation formats.
