@@ -1,6 +1,7 @@
 import 'dart:io' show File;
 
-import '../extensions/json_extension.dart';
+import 'package:json_dart/json_dart.dart';
+
 import '../extensions/num_extension.dart';
 
 class SpineSkeletonJson {

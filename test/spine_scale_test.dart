@@ -1,8 +1,8 @@
 import 'dart:io' show Directory, File;
 
-import 'package:animation_tools/extensions/json_extension.dart';
 import 'package:animation_tools/spine/spine_animation_tools.dart';
 import 'package:image/image.dart';
+import 'package:json_dart/json_dart.dart';
 import 'package:test/test.dart';
 
 import 'expect_json_helper.dart';

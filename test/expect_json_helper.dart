@@ -1,4 +1,4 @@
-import 'package:animation_tools/extensions/json_extension.dart';
+import 'package:json_dart/json_dart.dart';
 import 'package:test/test.dart';
 
 class ExpectJsonHelper {
