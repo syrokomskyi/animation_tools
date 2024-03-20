@@ -163,12 +163,8 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-# test data
-/test/data/owl_75
-/test/data/owl_move_animation
-/test/data/owl_remove_animation
-/test/data/spineboy_leave_animations
-
 /.vscode/settings.json
 
 /build
+
+/_output
