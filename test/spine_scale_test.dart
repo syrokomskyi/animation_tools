@@ -77,10 +77,10 @@ void main() async {
 
       final bone =
           // ignore: avoid_dynamic_calls
-          json['animations']['idle']['bones']['bone'] as Map<String, dynamic>;
+          json['animations']['idle']['bones']['bone'] as JsonMap;
       final ebone =
           // ignore: avoid_dynamic_calls
-          ejson['animations']['idle']['bones']['bone'] as Map<String, dynamic>;
+          ejson['animations']['idle']['bones']['bone'] as JsonMap;
       {
         final e = ExpectJsonHelper(
           (bone['rotate'] as List)[1],

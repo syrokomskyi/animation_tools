@@ -23,6 +23,7 @@ dependencies:
   args: ^2.4.2
   image: ^4.1.7
   json_dart: ^0.1.1
+  meta: ">=1.10.0 <3.0.0"
   path: ^1.9.0
 
 dev_dependencies:

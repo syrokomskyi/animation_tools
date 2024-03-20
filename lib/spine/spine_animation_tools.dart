@@ -3,31 +3,42 @@
 import 'dart:io' show Directory, File;
 
 import 'package:image/image.dart';
+import 'package:json_dart/json_dart.dart';
 import 'package:path/path.dart' as path;
 
 import '../animation_tools.dart';
 import 'spine_skeleton_json.dart';
 import 'spine_texture_atlas.dart';
 
+/// Class for work with Spine animation.
 class SpineAnimationTools extends AnimationTools {
   SpineAnimationTools(super.sourcePath);
 
+  /// File for atlas.
   String get fileAtlas => buildFileNameAtlas(currentFolder);
 
+  /// Path to file for atlas.
   String get pathToFileAtlas => '$currentPath/$fileAtlas';
 
+  /// File for skeleton.
   String get fileSkeleton => buildFileNameSkeleton(currentFolder);
 
+  /// Path to file for skeleton.
   String get pathToFileSkeleton => '$currentPath/$fileSkeleton';
 
+  /// File for texture.
   String get fileTexture => buildFileNameTexture(currentFolder);
 
+  /// Path to file for texture.
   String get pathToFileTexture => '$currentPath/$fileTexture';
 
+  /// Filename for atlas.
   static String buildFileNameAtlas(String name) => '$name.atlas';
 
+  /// Filename for skeleton.
   static String buildFileNameSkeleton(String name) => '$name.json';
 
+  /// Filename for texture.
   static String buildFileNameTexture(String name) => '$name.webp';
 
   @override
@@ -162,7 +173,7 @@ class SpineAnimationTools extends AnimationTools {
     // 1) Search animations.
     var step = 1;
     resetCurrentIndent();
-    late final Map<String, dynamic> animations;
+    late final JsonMap animations;
     {
       final p = pathToFileSkeleton;
       print('$currentIndent$step) Searching animations $names'
@@ -170,8 +181,8 @@ class SpineAnimationTools extends AnimationTools {
 
       final file = File(p);
       final skeleton = SpineSkeletonJson(file);
-      animations = (skeleton.json['animations'] ?? <String, dynamic>{})
-          as Map<String, dynamic>;
+      animations =
+          (skeleton.json['animations'] ?? <String, dynamic>{}) as JsonMap;
       String? notFoundName;
       for (final name in names) {
         assert(name.trim() == name);
@@ -223,7 +234,7 @@ class SpineAnimationTools extends AnimationTools {
     // 1) Search animation.
     var step = 1;
     resetCurrentIndent();
-    late final Map<String, dynamic> animations;
+    late final JsonMap animations;
     {
       final p = pathToFileSkeleton;
       print(
@@ -231,8 +242,8 @@ class SpineAnimationTools extends AnimationTools {
 
       final file = File(p);
       final skeleton = SpineSkeletonJson(file);
-      animations = (skeleton.json['animations'] ?? <String, dynamic>{})
-          as Map<String, dynamic>;
+      animations =
+          (skeleton.json['animations'] ?? <String, dynamic>{}) as JsonMap;
 
       if (animations.isEmpty) {
         print('$currentIndent\tAnimation `$nameFrom` not found into the `$p`.');
@@ -272,7 +283,7 @@ class SpineAnimationTools extends AnimationTools {
     // 1) Search animation.
     var step = 1;
     resetCurrentIndent();
-    late final Map<String, dynamic> animations;
+    late final JsonMap animations;
     {
       final p = pathToFileSkeleton;
       print(
@@ -280,8 +291,8 @@ class SpineAnimationTools extends AnimationTools {
 
       final file = File(p);
       final skeleton = SpineSkeletonJson(file);
-      animations = (skeleton.json['animations'] ?? <String, dynamic>{})
-          as Map<String, dynamic>;
+      animations =
+          (skeleton.json['animations'] ?? <String, dynamic>{}) as JsonMap;
 
       if (animations.isEmpty) {
         print('$currentIndent\tAnimation `$name` not found into the `$p`.');

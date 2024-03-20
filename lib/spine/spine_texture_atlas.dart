@@ -2,11 +2,15 @@ import 'dart:io' show File;
 
 import '../extensions/num_extension.dart';
 
+/// Class for work with Spine atlas.
 class SpineTextureAtlas {
+  /// Build with [file].
   SpineTextureAtlas(this.file) : assert(file.existsSync());
 
+  /// Working file for atlas.
   final File file;
 
+  /// Detects a referense to texture.
   bool hasReferenceToTexture(String name) {
     assert(name.isNotEmpty);
 
@@ -21,6 +25,7 @@ class SpineTextureAtlas {
     return false;
   }
 
+  /// Scale [file] and save it.
   void scaleAndSave(num s) {
     final r = <String>[];
 
@@ -47,6 +52,7 @@ class SpineTextureAtlas {
   }
 }
 
+/// Factory for one Spine structure.
 // ignore: avoid_classes_with_only_static_members
 class SizedElementFactory {
   static SizedElement? createFromString(String s) {
@@ -104,22 +110,22 @@ abstract class SizedElement<T extends num> {
   String toString() => raw;
 }
 
-// xy: 2, 690
+/// xy: 2, 690
 class XY extends SizedElement<int> {
   XY(super.raw);
 }
 
-// size: 122, 143
+/// size: 122, 143
 class Size extends SizedElement<int> {
   Size(super.raw);
 }
 
-// orig: 122, 143
+/// orig: 122, 143
 class Orig extends SizedElement<int> {
   Orig(super.raw);
 }
 
-// offset: 2, 3
+/// offset: 2, 3
 class Offset extends SizedElement<int> {
   Offset(super.raw);
 }

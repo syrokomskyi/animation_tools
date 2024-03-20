@@ -4,14 +4,20 @@ import 'package:json_dart/json_dart.dart';
 
 import '../extensions/num_extension.dart';
 
+/// Class for work with Spine skeleton.
 class SpineSkeletonJson {
+  /// Build with [file].
   SpineSkeletonJson(this.file) : assert(file.existsSync(), file.toString());
 
+  /// Build with [path].
   factory SpineSkeletonJson.path(String path) => SpineSkeletonJson(File(path));
 
+  /// Fields for scale.
   static const needToScaleRootFields = <String>[
     'skeleton',
   ];
+
+  /// Fields for scale.
   static const needToScaleInnerFields = <String>[
     'x',
     'y',
@@ -19,15 +25,19 @@ class SpineSkeletonJson {
     'height',
   ];
 
+  /// Working file for skeleton.
   final File file;
 
+  /// [file] as [String].
   String get raw => file.readAsStringSync();
 
-  Map<String, dynamic> get json => raw.jsonMap;
+  /// [file] to [Map].
+  JsonMap get json => raw.jsonMap;
 
-  Map<String, dynamic> leaveAnimations(List<String> names) {
+  /// Leaves animation contains [names].
+  JsonMap leaveAnimations(List<String> names) {
     final newJson = json;
-    final animations = newJson['animations'] as Map<String, dynamic>;
+    final animations = newJson['animations'] as JsonMap;
     final keptAnimations = <String, dynamic>{};
     for (final kv in animations.entries) {
       if (names.contains(kv.key)) {
@@ -39,46 +49,49 @@ class SpineSkeletonJson {
     return newJson;
   }
 
-  Map<String, dynamic> moveAnimation(String nameFrom, String nameTo) {
+  /// Move animation from [namesFrom] to [nameTo].
+  JsonMap moveAnimation(String nameFrom, String nameTo) {
     final newJson = json;
-    final animations = newJson['animations'] as Map<String, dynamic>;
+    final animations = newJson['animations'] as JsonMap;
     animations[nameTo] = animations[nameFrom];
     animations.remove(nameFrom);
 
     return newJson;
   }
 
-  Map<String, dynamic> removeAnimation(String name) {
+  /// Remove animation with [name].
+  JsonMap removeAnimation(String name) {
     final newJson = json;
-    final animations = newJson['animations'] as Map<String, dynamic>;
+    final animations = newJson['animations'] as JsonMap;
     animations.remove(name);
 
     return newJson;
   }
 
-  Map<String, dynamic> scale(num s) => json.map<String, dynamic>(
+  /// Scales animation.
+  JsonMap scale(num s) => json.map(
         (String name, dynamic value) => MapEntry<String, dynamic>(
           name,
           needToScaleRootFields.contains(name)
-              ? _scale(value as Map<String, dynamic>, s)
+              ? _scale(value as JsonMap, s)
               : value,
         ),
       );
 
-  void save(Map<String, dynamic> newJson) =>
+  /// Save [newJson] to [file].
+  void save(JsonMap newJson) =>
       file.writeAsStringSync(newJson.sjson, flush: true);
 
-  Map<String, dynamic> _scale(Map<String, dynamic> json, num s) {
-    return json.map<String, dynamic>((String name, dynamic value) {
+  JsonMap _scale(JsonMap json, num s) {
+    return json.map((String name, dynamic value) {
       if (value is Map) {
-        final v = _scale(value as Map<String, dynamic>, s);
+        final v = _scale(value as JsonMap, s);
         return MapEntry<String, dynamic>(name, v);
       }
 
       if (value is List) {
         final v = value
-            .map<dynamic>((dynamic e) =>
-                e is Map ? _scale(e as Map<String, dynamic>, s) : e)
+            .map<dynamic>((dynamic e) => e is Map ? _scale(e as JsonMap, s) : e)
             .toList();
         return MapEntry<String, dynamic>(name, v);
       }

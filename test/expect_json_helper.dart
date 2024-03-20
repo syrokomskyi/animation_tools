@@ -3,11 +3,11 @@ import 'package:test/test.dart';
 
 class ExpectJsonHelper {
   const ExpectJsonHelper(dynamic o, dynamic eo)
-      : o = o as Map<String, dynamic>,
-        eo = eo as Map<String, dynamic>;
+      : o = o as JsonMap,
+        eo = eo as JsonMap;
 
-  final Map<String, dynamic> o;
-  final Map<String, dynamic> eo;
+  final JsonMap o;
+  final JsonMap eo;
 
   void test(String name) {
     final dynamic r = name.isEmpty ? o : o[name];
