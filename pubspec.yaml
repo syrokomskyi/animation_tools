@@ -1,6 +1,7 @@
 name: animation_tools
 description: >-
-  A standardized command-line Dart tool for processing animations. Supported now: Spine.
+  A standardized command-line easy-to-use Dart tool for processing animations.
+  Supported now: Spine.
 repository: https://github.com/signmotion/animation_tools
 topics:
   - animation
