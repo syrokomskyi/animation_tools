@@ -4,10 +4,10 @@ description: >-
 repository: https://github.com/signmotion/animation_tools
 topics:
   - animation
+  - cli
   - tools
   - transform
   - rename
-  - copy
 
 # Format:
 #   version: major.minor.patch
