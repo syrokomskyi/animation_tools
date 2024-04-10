@@ -7,7 +7,7 @@
 [![Build Status](https://github.com/signmotion/animation_tools/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/animation_tools/actions/workflows/dart-ci.yml)
 [![Publisher](https://img.shields.io/pub/publisher/animation_tools)](https://pub.dev/publishers/syrokomskyi.com)
 
-The standardized command-line easy-to-use and well-tested Dart tool for processing animations in any formats.
+The standardized command-line easy-to-use and [well-tested](https://github.com/signmotion/animation_tools/tree/master/test) Dart tool for processing animations in any formats.
 Feel free to use it in your awesome project.
 
 ## Supported formats
