@@ -3,13 +3,16 @@
 All notable changes to the project `AnimationTools` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## NEXT
+## 0.2.2
 
 - Provided documentation.
+- Enhanced `README`: added an opening speech in Welcome section, What's New section, shorted sentences, added a link to [CodeTriangle](https://codetriage.com), added a quality code badge, replaced badges with supported platforms to <https://badgen.net/pub>, updated a curated list, provided emojis to some sections, etc.
+- Added note to `pubspec.yaml` about version: compatible with <https://semver.org>.
+- Upgraded dependencies.
 
 ## 0.2.1
 
-- Added CI.
+- Added CI for GitHub.
 - Provided example.
 - Replaced local JSON extension with package `json_dart`.
 - Added badges to `README`.
