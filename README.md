@@ -3,58 +3,73 @@
 ![Cover - Animation Tools](https://raw.githubusercontent.com/signmotion/animation_tools/master/images/cover.webp)
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Pub Package](https://img.shields.io/badge/doc-animation_tools-blue)](https://pub.dartlang.org/packages/animation_tools)
-[![Build Status](https://github.com/signmotion/animation_tools/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/animation_tools/actions/workflows/dart-ci.yml)
+[![Pub Package](https://img.shields.io/pub/v/animation_tools.svg?logo=dart&logoColor=00b9fc&color=blue)](https://pub.dartlang.org/packages/animation_tools)
+[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/animation_tools?logo=github&logoColor=white)](https://github.com/signmotion/animation_tools)
 [![Publisher](https://img.shields.io/pub/publisher/animation_tools)](https://pub.dev/publishers/syrokomskyi.com)
 
-The standardized command-line easy-to-use and [well-tested](https://github.com/signmotion/animation_tools/tree/master/test) Dart tool for processing animations in any formats.
+![SDK version](https://badgen.net/pub/sdk-version/animation_tools)
+![Supported platforms](https://badgen.net/pub/flutter-platform/animation_tools)
+![Supported SDKs](https://badgen.net/pub/dart-platform/animation_tools)
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/animation_tools/dart-ci.yml?logo=github-actions&logoColor=white)](https://github.com/signmotion/animation_tools/actions)
+[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/animation_tools?logo=github&logoColor=white)](https://github.com/signmotion/animation_tools/pulls)
+[![Issues](https://img.shields.io/github/issues/signmotion/animation_tools?logo=github&logoColor=white)](https://github.com/signmotion/animation_tools/issues)
+[![Pub Score](https://img.shields.io/pub/points/animation_tools?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/animation_tools/score)
+
+The standardized command-line easy-to-use and [well-tested](https://github.com/signmotion/animation_tools/tree/master/test) Dart tool for processing animations in ~~any formats~~ **Spine** format.
 Feel free to use it in your awesome project.
 
-## Supported formats
+[![CodeFactor](https://codefactor.io/repository/github/signmotion/animation_tools/badge)](https://codefactor.io/repository/github/signmotion/animation_tools)
+
+Share some ❤️ and star repo to support the project.
+
+_If you write an article about **AnimationTools** or any of [these](https://pub.dev/packages?q=publisher%3Asyrokomskyi.com&sort=updated) packages, let me know and I'll post the URL of the article in the **README**_ 🤝
+
+## 🎞️ Supported Formats
 
 - [Spine](https://esotericsoftware.com)
-- [You can add your own format]
+- _You can add your own format_
 
-## What can this tool do?
+## 🚀 Usage
 
 Run commands below into the terminal from the folder `animation_tools/bin/`.
 Recommended: [Cmder](https://cmder.net).
 
-### Work with animation folder
+### Work with Animation Folder
 
-#### Copy animation folder
+#### Copy Animation Folder
 
 ```bash
 dart main.dart --source path/to/a --copy path/to/b
 ```
 
-#### Scale animation folder
+#### Scale Animation Folder
 
 ```bash
 dart main.dart --source path/to/b --scale 0.75
 ```
 
-### Working with concrete animation
+### Working with Concrete Animation
 
-#### Move and rename animation
+#### Move and Rename Animation
 
 ```bash
 dart main.dart --source path/to/b --move_animation 'idle idle_1'
 ```
 
-#### Remove animation
+#### Remove Animation
 
 ```bash
 dart main.dart --source path/to/b --remove_animation 'idle'
 ```
 
-#### Leave only declared animations
+#### Leave Only Declared Animations
 
 ```bash
 dart main.dart --source path/to/b --leave_animations 'idle walk run shoot'
 ```
 
-### Advanced use
+## 🔬 Advanced Usage
 
 Commands can be written in one line. For example, `copy and scale`:
 
@@ -68,23 +83,13 @@ All commands and notes you can look with command:
 dart main.dart --help
 ```
 
-## Test
-
-The examples you can see in the folder `test`.
-
-```bash
-dart test --concurrency=1
-```
-
-## Project structure
-
-### Entrypoint
+## 🏗️ Project Structure
 
 - `bin` Entrypoint.
 - `lib` Source code.
 - `test` Unit tests with examples.
 
-## Example of Spine files
+## 👀 Example of Spine Files
 
 This is one of the animations of the real project. Source: `test/data/owl`.
 
@@ -1367,17 +1372,46 @@ owl_wing_left
 
 ![Spine animation tools](https://raw.githubusercontent.com/signmotion/animation_tools/master/test/data/owl/owl.webp)
 
-## Welcome
+## ✨ What's New
 
-Requests and suggestions are warmly welcome.
+Look at [changelog](https://pub.dev/packages/animation_tools/changelog).
 
-This package is open-source, stable and well-tested. Development happens on
+## 👋 Welcome
+
+If you encounter any problems, feel free to [open an issue](https://github.com/signmotion/animation_tools/issues). If you feel the package is missing a feature, please [raise a ticket](https://github.com/signmotion/animation_tools/issues) on Github and I'll look into it. Requests and suggestions are warmly welcome. Danke!
+
+Contributions are what make the open-source community such a great place to learn, create, take a new skills, and be inspired.
+
+If this is your first contribution, I'll leave you with some of the best links I've found: they will help you get started or/and become even more efficient.
+
+- [Guide to Making a First Contribution](https://github.com/firstcontributions/first-contributions). You will find the guide in your native language.
+- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute). Longread for deep diving for first-timers and for veterans.
+- [Summer Guide from Google](https://youtu.be/qGTQ7dEZXZc).
+- [CodeTriangle](https://codetriage.com). Free community tools for contributing to Open Source projects.
+
+The package **AnimationTools** is open-source, stable and well-tested. Development happens on
 [GitHub](https://github.com/signmotion/animation_tools). Feel free to report issues
 or create a pull-request there.
 
 General questions are best asked on
 [StackOverflow](https://stackoverflow.com/questions/tagged/animation_tools).
 
-## TODO
+And here is a curated list of how you can help:
 
-- Support other animation formats.
+- Documenting the undocumented. Whenever you come across a class, property, or method within our codebase that you're familiar with and notice it lacks documentation, kindly spare a couple of minutes to jot down some helpful notes for your fellow developers.
+- Refining the code. While I'm aware it's primarily my responsibility to refactor the code, I wholeheartedly welcome any contributions you're willing to make in this area. Your insights and improvements are appreciated!
+- Constructive code reviews. Should you discover a more efficient approach to achieve something, I'm all ears. Your suggestions for enhancement are invaluable.
+- Sharing your examples. If you've experimented with our use cases or have crafted some examples of your own, feel free to add them to the `example` directory. Your practical insights can enrich our resource pool.
+- Fix typos/grammar mistakes.
+- Report bugs and scenarios that are difficult to implement.
+- Implement new features by making a pull-request.
+
+## ✅ TODO (perhaps)
+
+Once you start using the **AnimationTools**, it will become easy to choose the functionality to contribute. But if you already get everything you need from this package but have some free time, let me write here what I have planned:
+
+- Support for popular animation formats.
+
+It's just a habit of mine: writing down ideas that come to mind while working on a project. I confess that I rarely return to these notes. But now, hopefully, even if you don't have an idea yet, the above notes will help you choose the suitable "feature" and become a contributor to the open-source community.
+
+Created [with ❤️](https://syrokomskyi.com)
