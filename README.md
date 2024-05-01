@@ -1,25 +1,25 @@
 # Animation Tools
 
+![SDK version](https://badgen.net/pub/sdk-version/animation_tools?style=for-the-badge)
+![Supported platforms](https://badgen.net/pub/flutter-platform/animation_tools?style=for-the-badge)
+![Supported SDKs](https://badgen.net/pub/dart-platform/animation_tools?style=for-the-badge)
+
 ![Cover - Animation Tools](https://raw.githubusercontent.com/signmotion/animation_tools/master/images/cover.webp)
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Pub Package](https://img.shields.io/pub/v/animation_tools.svg?logo=dart&logoColor=00b9fc&color=blue)](https://pub.dartlang.org/packages/animation_tools)
-[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/animation_tools?logo=github&logoColor=white)](https://github.com/signmotion/animation_tools)
-[![Publisher](https://img.shields.io/pub/publisher/animation_tools)](https://pub.dev/publishers/syrokomskyi.com)
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Pub Package](https://img.shields.io/pub/v/animation_tools.svg?logo=dart&logoColor=00b9fc&color=blue&style=for-the-badge)](https://pub.dartlang.org/packages/animation_tools)
+[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/animation_tools?logo=github&logoColor=white&style=for-the-badge)](https://github.com/signmotion/animation_tools)
+[![Publisher](https://img.shields.io/pub/publisher/animation_tools?style=for-the-badge)](https://pub.dev/publishers/syrokomskyi.com)
 
-![SDK version](https://badgen.net/pub/sdk-version/animation_tools)
-![Supported platforms](https://badgen.net/pub/flutter-platform/animation_tools)
-![Supported SDKs](https://badgen.net/pub/dart-platform/animation_tools)
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/animation_tools/dart-ci.yml?logo=github-actions&logoColor=white)](https://github.com/signmotion/animation_tools/actions)
-[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/animation_tools?logo=github&logoColor=white)](https://github.com/signmotion/animation_tools/pulls)
-[![Issues](https://img.shields.io/github/issues/signmotion/animation_tools?logo=github&logoColor=white)](https://github.com/signmotion/animation_tools/issues)
-[![Pub Score](https://img.shields.io/pub/points/animation_tools?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/animation_tools/score)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/animation_tools/dart-ci.yml?logo=github-actions&logoColor=white&style=for-the-badge)](https://github.com/signmotion/animation_tools/actions)
+[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/animation_tools?logo=github&logoColor=white&style=for-the-badge)](https://github.com/signmotion/animation_tools/pulls)
+[![Issues](https://img.shields.io/github/issues/signmotion/animation_tools?logo=github&logoColor=white&style=for-the-badge)](https://github.com/signmotion/animation_tools/issues)
+[![Pub Score](https://img.shields.io/pub/points/animation_tools?logo=dart&logoColor=00b9fc&style=for-the-badge)](https://pub.dev/packages/animation_tools/score)
 
 The standardized command-line easy-to-use and [well-tested](https://github.com/signmotion/animation_tools/tree/master/test) Dart tool for processing animations in ~~any formats~~ **Spine** format.
 Feel free to use it in your awesome project.
 
-[![CodeFactor](https://codefactor.io/repository/github/signmotion/animation_tools/badge)](https://codefactor.io/repository/github/signmotion/animation_tools)
+[![CodeFactor](https://codefactor.io/repository/github/signmotion/animation_tools/badge?style=for-the-badge)](https://codefactor.io/repository/github/signmotion/animation_tools)
 
 Share some ❤️ and star repo to support the project.
 
