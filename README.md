@@ -1370,7 +1370,7 @@ owl_wing_left
 
 ### image
 
-[<img src="https://raw.githubusercontent.com/signmotion/animation_tools/master/test/data/owl/owl.webp" width="600" alt="Spine animation tools"/>](https://raw.githubusercontent.com/signmotion/animation_tools/master/test/data/owl/owl.webp)
+![Spine animation tools](https://raw.githubusercontent.com/signmotion/animation_tools/master/test/data/owl/owl.webp)
 
 ## ✨ What's New
 
