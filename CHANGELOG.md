@@ -3,6 +3,18 @@
 All notable changes to the project `AnimationTools` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.6
+
+- Corrected `README`.
+
+## 0.2.5
+
+- Provided a link to [webduet.de](https://webduet.de "The Modern Planet-Scale Site for Your Ambitions") into `README`.
+
+## 0.2.4
+
+- Upgraded dependencies.
+
 ## 0.2.3
 
 - Updated cover.
