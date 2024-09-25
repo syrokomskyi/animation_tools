@@ -3,6 +3,14 @@
 All notable changes to the project `AnimationTools` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.8
+
+- Upgraded [Fresher badge](https://github.com/signmotion/fresher).
+
+## 0.2.7
+
+- Enhanced a footer in `README`.
+
 ## 0.2.6
 
 - Corrected `README`.
